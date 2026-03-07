@@ -1,194 +1,327 @@
-# TDKSozluk
-NVDA için geliştirilen TDK ve Sözlükler adlı bu eklenti TDK Güncel Türkçe Sözlük, Dil Derneği, Vikisözlük, Nişanyan, Kubbealtı Lugatı, dahili deyim ve atasözleri sözlükleri, web motorları ve Tureng sözlük'te hızlı arama yapmanızı sağlar.
-# TDK ve Sözlükler (Sürüm 2026.3.5)
+# TDK ve Sözlükler (Sürüm 2026.4.0)
 
 * **Yazar:** NVDA_TR
 * **Uyumluluk:** NVDA 2022.1 ve sonrası
 
 **🔔 Eklenti İşlev ve Özellikleri:**
 
-* TDK ve Dil Derneği sözlüklerinde ayrı ayrı veya birleşik arama imkânı.
-* Kelime listeleme özelliği (İle başlayan ve İle biten kelimeler).
+* TDK, Dil Derneği ve Kubbealtı Lugatı'nda ayrı ayrı, ikili veya üçlü birleşik arama imkânı.
+* Kelime listeleme özelliği (İle başlayan / İle biten kelimeler).
 * Akıllı Atasözü ve Deyim arama algoritması.
-* Dahili Deyimler ve Atasözleri Sözlükleri.
+* Dahili Deyimler ve Atasözleri sözlükleri (çevrimdışı çalışır).
 * Tureng (İngilizce-Türkçe / Türkçe-İngilizce) sözlük entegrasyonu.
 * İngilizceden İngilizceye sözlük, Metin Analizi, IP ve ISBN çözümleme.
-* Wikisözlük, Nişanyan Sözlük, Kubbealtı Lugatı gibi sözlüklerde ve Google, Duckduckgo, Yandex, Bing, Yahoo gibi arama motorlarında tarayıcı üzerinden otomatik arama başlatma olanağı.
+* Vikisözlük, Nişanyan Sözlük ve arama motorlarında tarayıcı üzerinden otomatik arama başlatma.
+* Arama geçmişi (son 100 arama oturum boyunca bellekte tutulur).
+* Günün Kelimesi önbelleği (aynı gün içinde tekrar API çağrısı yapılmaz).
+* Katman menüsünden etkileşimli tuş listesi.
 
 ---
 
-### 🎯 Eklentinin Felsefesi
+## 🎯 Eklentinin Felsefesi
 
-Bilgiye erişim, bir tarayıcı sekmesi açıp reklam yığınları arasında boğuşmaktan çok daha zahmetsiz olmalıdır. Özellikle bir metni okurken karşılaştığınız ve aşina olmadığınız bir kelime, deyim veya ifade, okuma akışınızı bölmemelidir.
+### Dilin asıl sahibi okuyucudur
 
-**TDK ve Sözlükler** eklentisi; Türkiye'nin en köklü dil kurumlarının (TDK ve Dil Derneği) hazinesini, ekran okuyucu kullanıcıları için **"damıtılmış"** bir şekilde sunar. Karmaşık web arayüzlerini, görsel kalabalığı ve erişilemez butonları aradan çıkararak, sizi doğrudan kelimenin saf anlamıyla buluşturur.
+Türkçe, binlerce yıllık kültürel birikimin taşıyıcısı olan bir dildir. Kelimelerin anlamını, kökenini ve kullanım bağlamını kavramak; sadece bir tanım öğrenmek değil, dilin iç dünyasıyla kurulan bir ilişkidir. Ancak bu ilişkiyi kurmak için gereken her araç — TDK, Dil Derneği, Kubbealtı, Nişanyan — günümüzde ya görsel arayüzlerle çevrilmiş, ya reklam katmanlarının arkasına gömülmüş ya da ekran okuyucuyla güçlükle gezilebilen web sayfaları hâline gelmiştir.
 
-Amacımız sadece bir sözlük sunmak değil; bilgisayar başındaki dil deneyiminizi hızlandırmak ve zenginleştirmektir.
+Ekran okuyucu kullanan biri için "hızlıca bir kelimeye bakmak", görme engeli olmayan bir okuyucuya kıyasla çok daha fazla adım gerektirir: tarayıcıyı açmak, adresi yazmak, sayfanın yüklenmesini beklemek, başlıklar ve bölümler arasında gezinerek asıl içeriğe ulaşmak, ardından tekrar okumakta olduğunuz yere dönmek. Okuma akışı bölen bu sürtünme, zaman içinde bir mikro yorgunluk birikimine dönüşür.
+
+**TDK ve Sözlükler** bu sürtünmeyi ortadan kaldırmak için tasarlanmıştır.
+
+### Damıtılmış bilgi, saf anlam
+
+Web sözlükleri belirli bir kullanım biçimini ön varsayar: fare ile gezmek, gözle taramak, reklam alanlarını görmezden gelmek. Bu ön varsayım, söz konusu kaynakların ekran okuyucuyla kullanılmasını başından zorlaştırır.
+
+Eklenti, bu kaynakların API'lerine ve veri akışlarına doğrudan erişerek yalnızca anlam bilgisini — tanımı, örnek cümleyi, köken notunu — alır ve NVDA'nın konuşma akışına en uygun biçimde sunar. Ortada reklam bloku yoktur, gezinilecek menü yoktur, yüklenecek resim yoktur. Yalnızca kelime vardır ve kelimenin anlamı.
+
+Bu yaklaşımın somut karşılığı şudur: Bir Osmanlıca edebi metni okurken karşılaştığınız *müstağni* kelimesinin TDK'daki modern karşılığını, Kubbealtı'daki köklü tanımını ve Dil Derneği'nin sade açıklamasını **tek bir tuş kombinasyonuyla** ve **tarayıcınızı açmadan** yan yana görebilirsiniz.
+
+### Üç kurum, tek pencere
+
+Türk dil kurumları birbirini tamamlar, birbirinin alternatifi değildir:
+
+- **TDK Güncel Türkçe Sözlük** — Standart, geniş kapsamlı, çağdaş kullanıma odaklı.
+- **Dil Derneği** — Öz Türkçe yaklaşımını benimseyen, yabancı kökenli kelimelere Türkçe karşılık arayan bir çizgide.
+- **Kubbealtı Lugatı** — Klasik edebiyatta ve Osmanlı döneminde kullanılan kelimeleri, köken bilgisi ve edebi örneklerle derinlemesine ele alan paha biçilmez bir hazine.
+
+Katman menüsündeki `"` (çift tırnak) tuşuyla bu üç kaynağın yanıtı **tek bir pencerede** üst üste gelir. Kaynaklar birbirine paralel sorgulanır; en uzun süren yanıt beklenirken diğerleri zaten hazırdır, toplam bekleme süresi en yavaş API kadardır.
+
+### Bir not sistemi gibi çalışır
+
+Eklentinin katman mimarisi, bir nota gitarist gibi parmakları alıştırarak öğrenilmek üzere tasarlanmıştır. İki tuşla katmanı açarsınız, tek tuşla kaynağı seçersiniz. Zamanla bu tuşlar bilinçsiz bir kas belleğine dönüşür; kelimeyle kurulan anlık bağlantı, düşünce akışını kesmez hâle gelir.
+
+Arama geçmişi (`H`), günün kelimesi (`G`), tersine arama (`S`) ve anagram çözücü (`0`) gibi özellikler bu anlayışın uzantısıdır: Bilgiye ulaşma yolunu sürekli kısaltmak, her aşamayı mümkün olduğu kadar az tuş vuruşuna indirgemek.
 
 ---
 
 ## Nasıl Kullanılır?
 
-Eklenti, iki ana komut yapısı üzerinden çalışır:
+Eklenti iki ana komut yapısı üzerinden çalışır:
 
 ### 1. Hızlı Arama (Anlık Bilgi)
 
 Kısayol: `NVDA` + `,` (Virgül)
 
-İmlecin üzerindeki kelimeyi veya o an seçili olan metni, **en son kullandığınız** sözlükte (Varsayılan: Birleşik Arama) anında arar.
+İmlecin üzerindeki kelimeyi veya o an seçili metni, **en son kullandığınız sözlükte** (varsayılan: Birleşik Arama) anında sorgular.
 
 * **Metin seçiliyse:** Seçili metni sorgular.
-* **Metin seçili değilse:** İmlecin üzerinde durduğu kelimeyi otomatik algılar ve sorgular.
-* **Hiçbir şey yoksa:** Ekrana bir yazı kutusu gelir, kelimeyi manuel yazıp `Enter`'a basarak arama yapabilirsiniz.
+* **Metin seçili değilse:** İmlecin üzerindeki kelimeyi otomatik algılar.
+* **Hiçbir şey yoksa:** Kelimeyi elle yazabileceğiniz bir giriş kutusu açılır.
+
+**Örnek:** Bir gazete makalesini okurken *müseccel* kelimesine geldiniz. `NVDA`+`,` tuşlarına basmanız yeterli; okuma akışınız kesilmeden anlamı duyarsınız.
 
 ### 2. Kaynak Seçim Katmanı (Detaylı Araştırma)
 
 Kısayol: `NVDA` + `Shift` + `,` (Virgül)
 
-Bu tuş kombinasyonuna bastığınızda "Sözlük Katmanı" devreye girer ve NVDA size kaynakları sesli olarak sayar. Ardından, elinizi diğer tuşlardan çekip sadece aşağıdaki karakter tuşlarına basarak ilgili kaynağı seçebilirsiniz:
+Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir özet seslendirir; ardından yalnızca bir tuşa basarak istediğiniz kaynağı seçersiniz.
+
+**Tüm tuş listesi için `<` (Küçüktür) tuşuna basın.** Açılan listeden bir seçenek seçtiğinizde o işlem başlar; liste kapanmadan başka işlemler de yapabilirsiniz.
 
 ---
 
 ## Hangi Kaynağı Ne Zaman Kullanmalıyım?
 
-Her sözlük farklı bir ihtiyaca çözüm sunar. İşte kullanım senaryoları:
+### `1` — Birleşik Arama (TDK + Dil Derneği)
 
-### `1` Birleşik Arama (TDK + Dil Derneği)
+**Ne işe yarar:** TDK ile Dil Derneği'ni eş zamanlı tarar; sonuçları tek pencerede üst alta dizer.
 
-**Senaryo:** Bir kelimenin anlamını tam olarak kavramak istiyorsunuz, ancak tek bir kuruma bağlı kalmak istemiyorsunuz.
+**Ne zaman kullanılır:** Kelimenin hem yaygın hem de öz Türkçe karşılığını merak ettiğinizde. İki kurumun tanımları çoğu zaman birbirini tamamlar; kimi zaman ise ince anlam farklarını ortaya koyar.
 
-**İşlevi:** TDK ve Dil Derneği veritabanlarını eş zamanlı tarar. Sonuç penceresinde üstte TDK'nin, altta Dil Derneği'nin tanımını sunar. Böylece iki kurum arasındaki anlam nüanslarını (örneğin "Olasılık" ya da "İtikat" kelimeleri için sundukları tanımların farklarını) tek pencere içinde karşılaştırabilirsiniz.
+**Örnek:** *Müzmin* kelimesini arattığınızda TDK "kronik, süreğen" karşılığını verirken Dil Derneği salt öz Türkçe karşılıklara odaklanır. İkisini bir arada görmek, kelimenin dildeki ağırlığını daha iyi anlatır.
 
-### `2` TDK Atasözleri ve Deyimler (Akıllı Liste)
+---
 
-**Senaryo:** Aklınıza bir deyim takıldı ama tamamını hatırlayamıyorsunuz. "Damla damla göl olur" mu yoksa "Damlaya damlaya" mı emin değilsiniz?
+### `"` — Üçlü Arama (TDK + Dil Derneği + Kubbealtı Lugatı)
 
-**İşlevi:** Yazdığınız kelimenin geçtiği tüm atasözlerini ve deyimleri tarar.
+**Ne işe yarar:** Birleşik arama `1`'in genişletilmiş halidir. Üç kaynağı paralel sorgular ve tek pencerede sunar.
 
-* Eğer **tek bir sonuç** varsa, doğrudan o sözün anlamını ekrana getirir.
-* Eğer **birden fazla sonuç** varsa (Örn: "El" kelimesi geçen yüzlerce deyim), size seçilebilir bir liste penceresi sunar. Listeden seçtiğiniz deyimin anlamı TDK Güncel Sözlük'te aranır.
+**Ne zaman kullanılır:** Özellikle Osmanlıca kökenli, arkaik veya edebi kelimelerle karşılaştığınızda bu mod çok değer katar. Kubbealtı, kelimenin dildeki tarihsel serüvenini, edebi örneklerde nasıl kullanıldığını ve Arapça ya da Farsça kökenini belgeler.
 
-### `3` - `5` Web Sözlükleri (Tarayıcıda Açılır)
+**Örnek:** *Hasbihâl* kelimesini üçlü aramada sorgularsanız:
+- TDK → "dertleşme, içten konuşma"
+- Dil Derneği → öz Türkçe karşılığı veya yorum notu
+- Kubbealtı → "(Ar. ḥasb-i ḥāl) Birinin hâlini hatırını sorarak başbaşa konuşma" ve klasik edebiyattan seçilmiş örnek cümlelerle kökenli açıklama
 
-| Tuş | Sözlük | Açıklama |
-| --- | --- | --- |
-| **`3`** | **Vikisözlük** | Daha sivil, çok dilli ve katılımcı tanımlar için idealdir. |
-| **`4`** | **Nişanyan Sözlük** | **"Bu kelime nereden geliyor?"** diyorsanız adresiniz burasıdır. Kelimelerin kökenini (etimoloji), tarihçesini ve hangi dilden geçtiğini öğrenmek için kullanılır. |
-| **`5`** | **Kubbealtı Lugatı** | Özellikle Osmanlıca metinler okurken veya "Lügat", "Müşkülpesent" gibi eski/edebi kelimelerin derin manalarını ararken en iyi kaynaktır. |
+Üç kurum üç farklı boyut sunar; aynı kelimede kaybolmak yerine onu çok yönlü kavrarsınız.
 
-### `Q` - `T` Arama Motorları
+---
 
-Sözlüklerde bulamadığınız özel isimler, teknik terimler, hata kodları veya genel kültür aramaları için metni doğrudan varsayılan tarayıcınızda açar:
+### `2` — TDK Atasözleri ve Deyimler (Akıllı Liste)
 
-* **`Q` Google:** En kapsamlı genel arama.
-* **`W` DuckDuckGo:** Gizlilik odaklı arama.
-* **`E` Bing:** Microsoft'un arama motoru.
-* **`R` Yahoo:** Haber ve finans ağırlıklı sonuçlar.
-* **`T` Yandex:** Özellikle görsel ve Türkiye lokasyonlu aramalarda güçlü bir alternatif.
+**Ne işe yarar:** Yazdığınız kelimenin geçtiği tüm atasözü ve deyimleri listeler.
 
-### `A` Yerel (Çevrimdışı) Sözlük
+* Tek sonuç varsa doğrudan gösterir.
+* Birden fazla sonuç varsa seçilebilir bir liste açar; listeden seçtiğinizde anlamı TDK'da aranır.
 
-**Senaryo:** İnternet bağlantınızın olmadığı durumlarda veya çok hızlı başvuru yapmak istediğinizde.
+**Ne zaman kullanılır:** Aklınıza yarım bir deyim takıldığında, ya da belirli bir kavramı içeren bütün kalıpları bulmak istediğinizde.
 
-**İşlevi:** Eklentiyle birlikte gelen dâhili veritabanında arama yapar. İçinde aradığınız kelimenin geçtiği tüm deyim ve atasözlerini listeler. Örneğin "Göz" için arama yaptığınızda, içinde "göz" geçen (Göz atmak, Gözden düşmek, İki gözü iki çeşme vb.) yüzlerce başlığı anında önünüze getirir.
+**Örnek:** *Taş* yazıp arattığınızda *"taş çatlasa"*, *"taşı gediğine koymak"*, *"taş kesmek"* gibi onlarca deyim listelenir; hepsinin anlamına tek tek ulaşabilirsiniz.
 
-### `S` Tersine Arama (Kavram Arama)
+---
 
-**Senaryo:** Aklınıza bir durum veya kavram geldi (örneğin "sinirlenmek" veya "çaresizlik") ancak bunu en iyi anlatan deyimi, atasözünü veya kelimeyi hatırlayamıyorsunuz.
+### `3` — Vikisözlük *(tarayıcıda açılır)*
 
-**İşlevi:** Yerel (Çevrimdışı) sözlükteki **açıklamaların ve tanımların** içinde arama yapar. Örneğin "öfke" yazıp arattığınızda; başlığında "öfke" geçmese bile, açıklamasında "öfke" kelimesi geçen (Örn: *Küplere binmek, Tepesi atmak, Kan beynine sıçramak*) tüm deyim ve atasözlerini önünüze serer. Duruma cuk oturacak deyim / sözü bulmak için kullanabilirsiniz.
+**Ne zaman kullanılır:** Türkçe olmayan bir sözcük, dilbilgisel çözümleme ya da çok dilli karşılaştırma istediğinizde. Vikisözlük topluluğu tarafından derlenir; resmi kurumların kapsamamayabileceği argo, bölgesel ağız veya neolojizmler burada bulunabilir.
 
-### 🧩 3. Kelime Avcısı (Liste Modu)
+---
 
-Bulmaca çözerken, şiir yazarken ya da sadece "sonu şu heceyle biten kelimeler neydi?" diye düşünürken kullanabileceğiniz güçlü bir listeleme özelliğidir.
+### `4` — Nişanyan Sözlük *(tarayıcıda açılır)*
+
+**Ne zaman kullanılır:** "Bu kelime Türkçeye nasıl girdi?" sorusu aklınızı kurcaladığında. Sevan Nişanyan'ın derlediği bu etimoloji sözlüğü; köken dilini, ilk belgelendiği tarihi ve anlam değişiminin izini sürer.
+
+**Örnek:** *Koltuk* kelimesini arattığınızda Farsça kökenli olduğunu, hangi anlam değişimlerinden geçtiğini öğrenirsiniz. Dil meraklıları için bitimsiz bir kaynak.
+
+---
+
+### `5` — Kubbealtı Lugatı *(doğrudan API, tarayıcı açılmaz)*
+
+**Ne işe yarar:** `eski.lugatim.com` API'sini sorgular; tarayıcı açmadan sonucu NVDA penceresinde gösterir.
+
+**Ne zaman kullanılır:** Osmanlıca metin okurken, klasik şiir incelerken ya da kelimenin tarihsel ve edebi bağlamını merak ettiğinizde. Kubbealtı; tanımın yanı sıra Yahyâ Kemal, Tanpınar, Necip Fazıl gibi ustalardan alınmış örnek cümlelerle kelimenin gerçek dildeki yaşamını belgeler.
+
+**Örnek:** *Seyyah* kelimesini `5` ile arattığınızda:
+> *(Ar. siyāḥat "yeryüzünde gezmek"ten seyyāḥ)* Seyâhat eden, uzak ülkeleri gezip dolaşan kimse, gezgin.
+> *İstanbul bütün şehirler arasında birinci derecede göründü ve Avrupa'nın en yüksek şâirlerinin gözlerini kamaştırdı ve en güzîde ruhlu seyyahlarının muhayyilesine yerleşti* (Yahyâ Kemal).
+
+---
+
+### `Q` – `T` — Arama Motorları *(tarayıcıda açılır)*
+
+Sözlüklerde karşılık bulamadığınız özel isimler, teknik terimler, kısaltmalar veya güncel olaylar için seçili metni doğrudan tarayıcıda arar:
+
+| Tuş | Motor | En iyi kullanım |
+|-----|-------|-----------------|
+| `Q` | Google | Genel, kapsamlı, haber ve akademik |
+| `W` | DuckDuckGo | Gizlilik odaklı, reklamsız sonuçlar |
+| `E` | Bing | Microsoft ekosistemi, görsel arama |
+| `R` | Yahoo | Haber ve finans haberleri |
+| `T` | Yandex | Türkiye lokasyonlu, Rusça içerik |
+
+---
+
+### `A` — Yerel (Çevrimdışı) Sözlük
+
+**Ne işe yarar:** Eklentiyle birlikte gelen dahili veritabanında arama yapar. Aranan kelimenin geçtiği tüm deyim ve atasözlerini anında listeler.
+
+**Ne zaman kullanılır:** İnternet bağlantısı olmadığında veya çok hızlı bir başvuruya ihtiyaç duyduğunuzda. API çağrısı yapmadığı için yanıt anlık gelir.
+
+---
+
+### `S` — Tersine Arama (Kavramdan Deyime)
+
+**Ne işe yarar:** Yerel sözlükteki **tanımların içinde** arama yapar; başlığa değil, açıklamaya bakar.
+
+**Ne zaman kullanılır:** Kavramı biliyorsunuz ama onu en iyi ifade eden deyimi unuttuğunuzda. Klasik sözlüklerin yapamadığı "anlam odaklı" aramayı gerçekleştirir.
+
+**Örnek:** *Hız* yazıp arattığınızda, başlığında "hız" geçmese de tanımında "hızla" veya "süratle" geçen tüm deyimler listelenir. *İt ürür, kervan yürür* gibi beklenmedik bir eşleşmeye bile rastlayabilirsiniz.
+
+---
+
+### 🧩 Kelime Avcısı (Liste Modu)
+
+Bulmaca çözerken, şiir yazarken ya da bir kalıba uyan kelimeleri ararken kullanabileceğiniz listeleme özelliği.
 
 Katman komutunu (`NVDA`+`Shift`+`,`) uyguladıktan sonra:
 
-* **`*` (Yıldız):** Seçili (veya yazılan) ifade ile **BAŞLAYAN** kelimeleri listeler.
-*Örnek: Yıldız tuşuna basıp "Kal" yazdıktan sonra enter tuşuna basarsanız; "Kalem", "Kalp", "Kaldırım" gibi kelimelerin listesi gelir.*
-* **`-` (Tire):** Seçili (veya yazılan) ifade ile **BİTEN** kelimeleri listeler.
-*Örnek: Tire tuşuna basıp "mak" yazarsanız; "Koşmak", "Yapmak", "Ekmek" gibi kelimelerin listesi gelir.*
+* **`*` (Yıldız):** Seçili veya yazılan ifadeyle **BAŞLAYAN** kelimeleri listeler.
+* **`-` (Tire):** Seçili veya yazılan ifadeyle **BİTEN** kelimeleri listeler.
 
-**Önemli:** Açılan listeden bir kelime seçip `Enter`'a bastığınızda, eklenti o kelimeyi otomatik olarak **"Birleşik Arama" (TDK + Dil Derneği)** modunda sorgular.
+Listeden bir kelime seçip `Enter`'a basınca eklenti o kelimeyi otomatik olarak **Birleşik Arama** modunda sorgular.
 
-### `I` Tureng Sözlük (İngilizce - Türkçe & Türkçe-İngilizce)
+**Örnek:** *Çiçek* yazıp `*` tuşuna basarsanız: çiçek, çiçekli, çiçekçi, çiçekalma, çiçeklenmek… gibi onlarca sonuç listelenir. `-` tuşuyla *lik* yazıp ararsanız "lik" ile biten tüm kelimeleri bulursunuz.
 
-**Senaryo:** İngilizce bir metin okurken bilmediğiniz bir kelimeye denk geldiniz veya Türkçe bir kelimenin İngilizce karşılığını (teknik, tıbbi, hukuki vb. kategoriler dahil) öğrenmek istiyorsunuz.
+---
 
-**İşlevi:** Tureng.com veritabanını tarar. Kelimenin farklı kategorilerdeki (Genel, Teknik, Hukuk vb.) karşılıklarını temiz bir liste halinde, örnek cümlelerle birlikte sunar. Tarayıcı açmanıza gerek kalmaz.
+### `I` — Tureng Sözlük (İngilizce ↔ Türkçe)
 
-### 📊 4. Metin Analizi ve Bilgi Sistemi
+**Ne işe yarar:** Tureng.com veritabanını doğrudan sorgular. Tarayıcı açmadan, kelimenin farklı bağlamlardaki karşılıklarını (genel, teknik, argo, tıbbi vb.) ve örnek cümleleri listeler.
 
-Sözlük eklentisi, kelime anlamlarını sorgulamanın ötesine geçerek; editörler, öğrenciler ve yazılımcılar için gelişmiş bir analiz aracı sunar. Bu özellik, seçili metnin veya imlecin üzerindeki kelimenin türüne göre akıllıca davranarak size en doğru bilgiyi vermeyi amaçlar.
+**Ne zaman kullanılır:** İngilizce bir metin okurken bilmediğiniz bir kelimeye denk geldiğinizde veya Türkçe bir ifadenin İngilizce karşılığını aradığınızda.
 
-**Nasıl Kullanılır?**
-Kaynak seçim katmanını açın (`NVDA` + `Shift` + `,`), ardından `.` (Nokta) tuşuna basın.
+**Örnek:** *Leverage* kelimesini `I` ile arattığınızda; finans, mühendislik ve günlük kullanımdaki Türkçe karşılıkları ayrı kategorilerde listelenir.
 
-#### A. Çoklu Kelime Seçimi ve Detaylı İstatistikler
+---
 
-Eğer bir metin bloğu (birden fazla kelime) seçtiyseniz, eklenti bu metni inceler ve şu raporu sunar:
+### 📊 Metin Analizi ve Bilgi Sistemi
 
-* **Okuma Süresi:** Metnin ortalama bir hızla ne kadar sürede okunabileceğini hesaplar.
-* **Doğru Kelime Sayımı:** Noktalama işaretlerini kelimelerden ayırarak , sayım yapar.
-* **Yapısal Analiz:** Metindeki paragraf ve cümle sayılarını tespit eder.
-* **Frekans Analizi:** Metnin ana fikrini anlamanızı kolaylaştırmak için, metin içinde en sık kullanılan 20 kelimeyi listeler.
-* **İçerik Türü:** Metnin harf veya rakam yoğunluğuna bakarak türü hakkında (düz yazı mı, kod/veri mi) ipucu verir.
+Katman komutundan sonra `.` (Nokta) tuşuna basın.
 
-#### B. Tek Kelime ve Özel Veri Tespiti
+#### Çoklu kelime seçiliyse — Metin İstatistikleri
 
-Seçim yoksa veya tek kelime seçiliyse, modül verinin türünü algılar:
+Uzunca bir metin bloğu seçip `.` tuşuna bastığınızda:
 
-* **Sözlük Tanımı:** Standart bir İngilizce kelime ise, kelimenin tanımını İngilizce olarak getirir. Kelimeyle ilgili sonuç bulunamazsa arama Tureng Sözlük'e yönlendirilir.
-* **IP Adresi Sorgusu:** Veri bir IP adresi formatındaysa (Örn: 192.168.1.1), konum ve sağlayıcı bilgisini sorgular.
-* **ISBN Kitap Sorgusu:** Veri 10 veya 13 haneli bir ISBN numarasıysa, kitabın adını ve yazarını getirir.
+* **Okuma süresi:** Ortalama okuma hızına göre dakika cinsinden tahmin.
+* **Kelime sayısı:** Noktalama işaretleri ayrıştırılarak doğru sayım.
+* **Yapısal analiz:** Paragraf ve cümle sayısı.
+* **Frekans analizi:** Metindeki en sık kullanılan kelimeler.
+* **İçerik türü:** Harf/rakam yoğunluğuna göre metin türü tahmini.
 
-#### C. Çalışma Mantığı ve Öncelik Sırası
+**Örnek kullanım:** Yazdığınız bir dilekçenin kaç kelime içerdiğini, ortalama cümle uzunluğunu ve hangi kelimeleri tekrar ettiğinizi öğrenmek için son derece kullanışlıdır.
 
-Eklenti en doğru sonucu vermek için şu sırayı takip eder:
+#### Tek kelime veya özel veri seçiliyse — Akıllı Tanıma
 
-1. **Yazı Alanı Seçimi:** Önce aktif yazı kutusundaki seçime bakar.
-2. **Sanal Tampon:** Yoksa, web sayfasındaki/belgedeki seçime bakar.
-3. **Sistem İmleci:** Seçim yoksa, imlecin üzerindeki kelimeyi yakalar.
-4. **Yazı Alanı:** Hiçbiri yoksa aranacak ifadenin girilebileceği bir yazı alanı açar.
+Modül, seçilen verinin türüne göre otomatik karar verir:
 
-### 🔠 5. Anagram Çözücü (Kelime Türetmece)
+* **Standart İngilizce kelime:** İngilizce-İngilizce tanımı getirir; bulunamazsa Tureng'e yönlenir.
+* **IP adresi (`192.168.1.1` formatı):** Konum, ISS ve ülke bilgisini sorgular.
+* **ISBN numarası (10 veya 13 hane):** Kitabın adını, yazarını ve yayıncısını getirir.
 
-Scrabble oynarken veya "elimdeki harflerle neler yazabilirim?" diye düşünürken kullanabileceğiniz, bulmaca severler için tasarlanmış bir araçtır.
+**Örnek:** Bir akademik kaynak listesinde `9789754583038` gibi bir ISBN görüp `.` tuşuna basarsanız; kitabın adına ve yazarına anında ulaşırsınız.
 
-Katman komutunu (`NVDA`+`Shift`+`,`) uyguladıktan sonra `0` (Sıfır) tuşuna basın.
+---
 
-Açılan kutuya elinizdeki harfleri (Örn: *k a l e m*) girdiğinizde, eklenti bu harflerle yazılabilecek anlamlı Türkçe kelimeleri, uzunluklarına göre sıralayarak listeler.
+### 🔠 Anagram Çözücü
 
-### 📅 6. TDK Günün İçeriği
+Katman komutundan sonra `0` (Sıfır) tuşuna basın.
 
-TDK'nin her gün yayınladığı "Günün Kelimesi" ve "Günün Atasözü/Deyimi" içeriğine anında ulaşabilirsiniz.
+Elinizdeki harfleri girin (örn: *k r a a l*). Eklenti, bu harflerle yazılabilecek Türkçe kelimeleri uzundan kısaya sıralayarak listeler.
 
-* **Manuel Erişim:** Katman komutunu uyguladıktan sonra `G` tuşuna basarak günün içeriğini anında görüntüleyebilirsiniz.
-* **Otomatik Bildirim:** Ayarlar panelinden ilgili seçeneği aktif ederseniz, NVDA her açıldığında günün kelimesi ve anlamı size otomatik olarak seslendirilir.
+**Örnek:** *a l a k* harflerini girerseniz: kala, laka, kaal… gibi geçerli kombinasyonları görürsünüz. Bulmaca ve kelime oyunları için güçlü bir araç.
 
-### ⚙️ Ayarlar ve Özelleştirme
+---
 
-Eklentiyi kendi çalışma alışkanlıklarınıza göre kişiselleştirebilirsiniz. Ayarlar paneline ulaşmak için **NVDA Menüsü** -> **Tercihler** -> **Ayarlar** yolunu izleyin ve açılan listeden **"TDK ve Sözlükler"** kategorisini bulun.
+### 📅 TDK Günün İçeriği
 
-Bu panelden şu yapılandırmaları yapabilirsiniz:
+TDK'nin her gün yayınladığı "Günün Kelimesi" ve "Günün Atasözü/Deyimi"ne ulaşmanın iki yolu:
 
-* **Varsayılan Kaynak:** `NVDA`+`,` kısayoluna bastığınızda, katman açılmadan doğrudan hangi sözlükte arama yapılacağını (Örn: Sadece TDK, Tureng vb.) seçebilirsiniz.
-* **Tureng limiti:** Tureng sonuç listesinin uzunluğunu belirleyebilirsiniz. Varsayılan değer 30'dur. Sonuçların tamamının gösterilmesini istiyorsanız bu alan boş bırakılmalıdır.
-* **TDK sonuçlarından örnek cümleleri çıkarma:** Onay kutusunu TDK sonuçlarına örnek cümlelerin dahil edilip edilmeyeceğini belirlemek için kullanabilirsiniz.
-* **Otomatik kopyalama:** Bu onay kutusunu bulunan sonuçların otomatik olarak panoya kopyalanması için kullanabilirsiniz.
-* **Sesli Geri Bildirim:** Arama işleminin başladığını bildiren bip sesini açıp kapatabilirsiniz.
-* **Sonuç Bildirim türü:** Arama sonuçların bir pencredede mi gösterilsin yoksa sadece seslendirilsin mi tercihini yapabilirsiniz.
-* **Başlangıç Bildirimi:** NVDA açıldığında TDK Günün Kelimesi'nin otomatik olarak okunup okunmayacağını belirleyebilirsiniz.
+* **Elle erişim:** Katman komutundan sonra `G` tuşuna basın.
+* **Otomatik bildirim:** Ayarlar panelinden etkinleştirirseniz NVDA her açıldığında günün içeriği otomatik seslendirilir.
+* **Önbellek:** Aynı gün içinde `G`'ye birden fazla kez basıldığında içerik önbellekten anında gelir; gereksiz API çağrısı yapılmaz.
 
-### 💡 İpuçları ve Kişiselleştirme
+---
 
-* **Pencereyi Kapatma:** TDK, Dil Derneği, Atasözleri, Yerel sözlük, Tureng ve metin analiz sonuçları NVDA'nın "Sanal Görüntüleme" penceresinde açılır. Okuma işiniz bittiğinde `ESC` tuşuna basarak pencereyi kapatabilir ve işinize kaldığınız yerden devam edebilirsiniz.
-* **Tuşları Değiştirme:** Eğer "Ben Kelime Listeleme özelliğini çok sık kullanıyorum, ona özel tek bir tuş atamak istiyorum" derseniz; *NVDA Menüsü -> Tercihler -> Girdi Hareketleri -> TDK ve Sözlükler* yolunu izleyebilirsiniz. Burada tüm komutlara istediğiniz klavye kısayolunu atayabilirsiniz.
+### 🕓 Arama Geçmişi
 
-### 💖 Teşekkür ve Katkıda Bulunanlar
+* **Erişim:** Katman komutundan sonra `H` tuşuna basın.
+* **İşlevi:** Son 100 aramayı en yeniden eskiye doğru listeler. Seçtiğiniz aramanın aynı sözlükte yenilenir.
+* **Not:** Geçmiş yalnızca oturum süresince bellekte tutulur; NVDA kapatılınca sıfırlanır.
 
-Bu eklentinin satır satır işlenmesinde ve kodlanmasında emeği geçen şahsım **Çağrı Doğan** olarak; ortaya sadece bilgiye erişimi hızlandıran değil, aynı zamanda kullanırken keyif veren bir araç çıkmasından mutluluk duyuyorum.
+---
 
-Bu projenin asıl kıvılcımı ise **Tuba Vural** sayesinde çakıldı. Fikrin NVDA_TR grubunda filizlenmesinden bugünkü haline gelmesine kadar; test süreçleri, geri bildirimler, kaynak önerileri ve içerik derleme konularındaki titiz çabası ve yol arkadaşlığı için kendisine en içten teşekkürlerimi sunuyorum.
+### 🗂️ Katman Tuş Listesi
 
-Kodlama sürecindeki desteği için yapay zeka asistanımız **Google Gemini**'ye; bilgi hazinelerinden faydalandığımız **TDK**, **Dil Derneği** ve **Tureng** gibi köklü kurumlara; eserlerini eklentimize dahil ederek değer kattığımız **Ülkü & Hüseyin Kuşçu** ve **Ömer Asım Aksoy** gibi kıymetli isimlere saygılarımızla...
+Tüm tuşları ve işlevlerini tek pencerede görmek için katman komutundan sonra `<` (Küçüktür) tuşuna basın.
+
+Açılan listeden bir öğeyi seçince o işlem doğrudan başlatılır; liste `Esc` ile kapatılana kadar açık kalır, birden fazla işlem yapabilirsiniz.
+
+**Tam liste:**
+
+| Tuş | İşlev |
+|-----|-------|
+| `1` | TDK + Dil Derneği (Birleşik) |
+| `2` | TDK Atasözleri ve Deyimler |
+| `3` | Vikisözlük (tarayıcı) |
+| `4` | Nişanyan Sözlük (tarayıcı) |
+| `5` | Kubbealtı Lugatı (API) |
+| `"` | Üçlü Arama (TDK + Dil Derneği + Kubbealtı) |
+| `Q` | Google |
+| `W` | DuckDuckGo |
+| `E` | Bing |
+| `R` | Yahoo |
+| `T` | Yandex |
+| `A` | Çevrimdışı Atasözleri Sözlüğü |
+| `I` | Tureng (İngilizce ↔ Türkçe) |
+| `S` | Tersine Arama (Kavramdan Deyime) |
+| `*` | İle Başlayan Kelimeler |
+| `-` | İle Biten Kelimeler |
+| `0` | Anagram Çözücü |
+| `G` | Günün Kelimesi (TDK) |
+| `H` | Arama Geçmişi |
+| `.` | Metin Analizi / Akıllı Bilgi |
+| `<` | Bu Tuş Listesi |
+| `Esc` | Katmandan Çık |
+
+---
+
+## ⚙️ Ayarlar ve Özelleştirme
+
+**NVDA Menüsü → Tercihler → Ayarlar → TDK ve Sözlükler**
+
+| Ayar | Açıklama |
+|------|----------|
+| **Varsayılan Kaynak** | `NVDA`+`,` tuşuna basıldığında doğrudan hangi sözlüğün çalışacağını belirler. |
+| **Tureng Limiti** | Tureng sonuç sayısı. `0` veya boş bırakılırsa tamamı gösterilir. Varsayılan: 30. |
+| **TDK Örnek Cümleleri** | TDK sonuçlarında örnek cümlelerin gösterilip gösterilmeyeceği. |
+| **Otomatik Kopyalama** | Bulunan sonucun otomatik olarak panoya kopyalanması. |
+| **Sesli Geri Bildirim** | Arama başladığında bip sesi. |
+| **Sonuç Bildirim Türü** | Sonucun pencerede mi gösterileceği yoksa yalnızca mı sesletileceği. |
+| **Başlangıç Bildirimi** | NVDA açılışında Günün Kelimesi'nin otomatik okunması. |
+
+---
+
+## 💡 İpuçları
+
+* **Pencereyi kapatmak:** Sonuç pencereleri NVDA'nın sanal görüntüleme penceresinde açılır. `Esc` ile kapatılır.
+* **Tuşları özelleştirmek:** *NVDA Menüsü → Tercihler → Girdi Hareketleri → TDK ve Sözlükler* yolundan tüm komutlara istediğiniz kısayolu atayabilirsiniz.
+* **Katman kuralı:** Katman komutundan sonra basılan tuş, yalnızca o an geçerlidir; ardından katman kapanır. Birden fazla işlem yapmak için her seferinde katmanı yeniden açmanız ya da `<` listesini kullanmanız gerekir.
+
+---
+
+## 💖 Teşekkür ve Katkıda Bulunanlar
+
+Bu eklentinin satır satır işlenmesinde ve kodlanmasında emeği geçen şahsım **Çağrı Doğan** olarak; ortaya yalnızca bilgiye erişimi hızlandıran değil, aynı zamanda kullanırken keyif veren bir araç çıkmasından mutluluk duyuyorum.
+
+Bu projenin asıl kıvılcımı **Tuba Vural** sayesinde çakıldı. Fikrin NVDA_TR grubunda filizlenmesinden bugünkü haline gelmesine kadar; test süreçleri, geri bildirimler, kaynak önerileri ve içerik derleme konularındaki titiz çabası ve yol arkadaşlığı için kendisine en içten teşekkürlerimi sunuyorum.
+
+Kodlama sürecindeki desteği için yapay zeka asistanlarımız **Google Gemini** ve **Claude**'a; bilgi hazinelerinden faydalandığımız **TDK**, **Dil Derneği**, **Kubbealtı** ve **Tureng** gibi köklü kurumlara; eserlerini eklentimize dahil ederek değer kattığımız **Ülkü & Hüseyin Kuşçu** ve **Ömer Asım Aksoy** gibi kıymetli isimlere saygılarımızla...
