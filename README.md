@@ -1,4 +1,4 @@
-# TDK ve Sözlükler (Sürüm 2026.4.0)
+# TDK ve Sözlükler (Sürüm 2026.4.4)
 
 * **Yazar:** NVDA_TR
 * **Uyumluluk:** NVDA 2022.1 ve sonrası
@@ -6,6 +6,7 @@
 **🔔 Eklenti İşlev ve Özellikleri:**
 
 * TDK, Dil Derneği ve Kubbealtı Lugatı'nda ayrı ayrı, ikili veya üçlü birleşik arama imkânı.
+* TDK Bilim ve Sanat Terimleri Sözlüğü entegrasyonu (70 civarında alt sözlük, çok dilli karşılıklar).
 * Kelime listeleme özelliği (İle başlayan / İle biten kelimeler).
 * Akıllı Atasözü ve Deyim arama algoritması.
 * Dahili Deyimler ve Atasözleri sözlükleri (çevrimdışı çalışır).
@@ -20,11 +21,10 @@
 
 ## 🎯 Eklentinin Felsefesi
 
-### Dilin asıl sahibi okuyucudur
 
 Türkçe, binlerce yıllık kültürel birikimin taşıyıcısı olan bir dildir. Kelimelerin anlamını, kökenini ve kullanım bağlamını kavramak; sadece bir tanım öğrenmek değil, dilin iç dünyasıyla kurulan bir ilişkidir. Ancak bu ilişkiyi kurmak için gereken her araç — TDK, Dil Derneği, Kubbealtı, Nişanyan — günümüzde ya görsel arayüzlerle çevrilmiş, ya reklam katmanlarının arkasına gömülmüş ya da ekran okuyucuyla güçlükle gezilebilen web sayfaları hâline gelmiştir.
 
-Ekran okuyucu kullanan biri için "hızlıca bir kelimeye bakmak", görme engeli olmayan bir okuyucuya kıyasla çok daha fazla adım gerektirir: tarayıcıyı açmak, adresi yazmak, sayfanın yüklenmesini beklemek, başlıklar ve bölümler arasında gezinerek asıl içeriğe ulaşmak, ardından tekrar okumakta olduğunuz yere dönmek. Okuma akışı bölen bu sürtünme, zaman içinde bir mikro yorgunluk birikimine dönüşür.
+Ekran okuyucu kullanan biri için "hızlıca bir kelimeye bakmak", görme engeli olmayan bir okuyucuya kıyasla çok daha fazla adım gerektirir: tarayıcıyı açmak, adresi yazmak, sayfanın yüklenmesini beklemek, başlıklar ve bölümler arasında gezinerek asıl içeriğe ulaşmak, ardından tekrar okumakta olduğunuz yere dönmek. Okuma akışını bölen bu sürtünme, zaman içinde bir mikro yorgunluk birikimine dönüşür.
 
 **TDK ve Sözlükler** bu sürtünmeyi ortadan kaldırmak için tasarlanmıştır.
 
@@ -44,11 +44,11 @@ Türk dil kurumları birbirini tamamlar, birbirinin alternatifi değildir:
 - **Dil Derneği** — Öz Türkçe yaklaşımını benimseyen, yabancı kökenli kelimelere Türkçe karşılık arayan bir çizgide.
 - **Kubbealtı Lugatı** — Klasik edebiyatta ve Osmanlı döneminde kullanılan kelimeleri, köken bilgisi ve edebi örneklerle derinlemesine ele alan paha biçilmez bir hazine.
 
-Katman menüsündeki `"` (çift tırnak) tuşuyla bu üç kaynağın yanıtı **tek bir pencerede** üst üste gelir. Kaynaklar birbirine paralel sorgulanır; en uzun süren yanıt beklenirken diğerleri zaten hazırdır, toplam bekleme süresi en yavaş API kadardır.
+Katman menüsündeki `"` (çift tırnak) tuşuyla bu üç kaynağın yanıtı **tek bir pencerede** üst üste gelir. Kaynaklar aynı anda paralel olarak sorgulanır; toplam bekleme süresi en yavaş API kadardır.
 
-### Bir not sistemi gibi çalışır
+### Az tuş, çok işlev
 
-Eklentinin katman mimarisi, bir nota gitarist gibi parmakları alıştırarak öğrenilmek üzere tasarlanmıştır. İki tuşla katmanı açarsınız, tek tuşla kaynağı seçersiniz. Zamanla bu tuşlar bilinçsiz bir kas belleğine dönüşür; kelimeyle kurulan anlık bağlantı, düşünce akışını kesmez hâle gelir.
+Eklentinin katman mimarisi, her işlemi mümkün olduğu kadar az adıma indirgemek üzere tasarlanmıştır. İki tuşla katmanı açarsınız, tek tuşla kaynağı seçersiniz. Zamanla bu kısayollar alışkanlığa dönüşür; kelimeyle kurulan anlık bağlantı, düşünce akışını kesmez hâle gelir.
 
 Arama geçmişi (`H`), günün kelimesi (`G`), tersine arama (`S`) ve anagram çözücü (`0`) gibi özellikler bu anlayışın uzantısıdır: Bilgiye ulaşma yolunu sürekli kısaltmak, her aşamayı mümkün olduğu kadar az tuş vuruşuna indirgemek.
 
@@ -84,11 +84,9 @@ Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir
 
 ### `1` — Birleşik Arama (TDK + Dil Derneği)
 
-**Ne işe yarar:** TDK ile Dil Derneği'ni eş zamanlı tarar; sonuçları tek pencerede üst alta dizer.
+**Ne işe yarar:** TDK ile Dil Derneği'ni eş zamanlı tarar; sonuçları tek pencerede alt alta gösterir.
 
 **Ne zaman kullanılır:** Kelimenin hem yaygın hem de öz Türkçe karşılığını merak ettiğinizde. İki kurumun tanımları çoğu zaman birbirini tamamlar; kimi zaman ise ince anlam farklarını ortaya koyar.
-
-**Örnek:** *Müzmin* kelimesini arattığınızda TDK "kronik, süreğen" karşılığını verirken Dil Derneği salt öz Türkçe karşılıklara odaklanır. İkisini bir arada görmek, kelimenin dildeki ağırlığını daha iyi anlatır.
 
 ---
 
@@ -97,13 +95,6 @@ Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir
 **Ne işe yarar:** Birleşik arama `1`'in genişletilmiş halidir. Üç kaynağı paralel sorgular ve tek pencerede sunar.
 
 **Ne zaman kullanılır:** Özellikle Osmanlıca kökenli, arkaik veya edebi kelimelerle karşılaştığınızda bu mod çok değer katar. Kubbealtı, kelimenin dildeki tarihsel serüvenini, edebi örneklerde nasıl kullanıldığını ve Arapça ya da Farsça kökenini belgeler.
-
-**Örnek:** *Hasbihâl* kelimesini üçlü aramada sorgularsanız:
-- TDK → "dertleşme, içten konuşma"
-- Dil Derneği → öz Türkçe karşılığı veya yorum notu
-- Kubbealtı → "(Ar. ḥasb-i ḥāl) Birinin hâlini hatırını sorarak başbaşa konuşma" ve klasik edebiyattan seçilmiş örnek cümlelerle kökenli açıklama
-
-Üç kurum üç farklı boyut sunar; aynı kelimede kaybolmak yerine onu çok yönlü kavrarsınız.
 
 ---
 
@@ -130,7 +121,7 @@ Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir
 
 **Ne zaman kullanılır:** "Bu kelime Türkçeye nasıl girdi?" sorusu aklınızı kurcaladığında. Sevan Nişanyan'ın derlediği bu etimoloji sözlüğü; köken dilini, ilk belgelendiği tarihi ve anlam değişiminin izini sürer.
 
-**Örnek:** *Koltuk* kelimesini arattığınızda Farsça kökenli olduğunu, hangi anlam değişimlerinden geçtiğini öğrenirsiniz. Dil meraklıları için bitimsiz bir kaynak.
+**Örnek:** *Bütçe* kelimesini arattığınızda kelimenin Fransızca kökenli olduğunu, Osmanlıcaya hangi dönemde ve hangi biçimle girdiğini, hatta kavramın İngiltere ve Fransa'daki siyasi tarihini öğrenirsiniz. Dil meraklıları için bitimsiz bir kaynak.
 
 ---
 
@@ -143,6 +134,34 @@ Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir
 **Örnek:** *Seyyah* kelimesini `5` ile arattığınızda:
 > *(Ar. siyāḥat "yeryüzünde gezmek"ten seyyāḥ)* Seyâhat eden, uzak ülkeleri gezip dolaşan kimse, gezgin.
 > *İstanbul bütün şehirler arasında birinci derecede göründü ve Avrupa'nın en yüksek şâirlerinin gözlerini kamaştırdı ve en güzîde ruhlu seyyahlarının muhayyilesine yerleşti* (Yahyâ Kemal).
+
+---
+
+### `6` — Sadece TDK Güncel Türkçe Sözlük
+
+**Ne işe yarar:** Birleşik aramadan (`1`) farklı olarak yalnızca TDK Güncel Türkçe Sözlük'ü sorgular; Dil Derneği sorgusu yapılmaz.
+
+**Ne zaman kullanılır:** Yalnızca TDK'nın resmî tanımını görmek istediğinizde veya Dil Derneği'nin sonuç döndürmediği durumlarda daha hızlı yanıt almak için.
+
+---
+
+### `7` — Sadece Dil Derneği
+
+**Ne işe yarar:** Yalnızca Dil Derneği API'sini sorgular.
+
+**Ne zaman kullanılır:** Bir kelimenin öz Türkçe karşılığını veya Dil Derneği'nin özgün yorumunu doğrudan görmek istediğinizde.
+
+---
+
+### `B` — TDK Bilim ve Sanat Terimleri Sözlüğü *(doğrudan API, tarayıcı açılmaz)*
+
+**Ne işe yarar:** TDK'nın Bilim ve Sanat Terimleri Sözlüğü'nü sorgular. Matematik, Fizik, Tıp, Dil Bilimi, Müzik ve daha pek çok bilim dalına ait teknik terimleri Türkçe karşılıkları ve çok dilli eşdeğerleriyle (İngilizce, Fransızca, Almanca, Latince) birlikte sunar. Sonuçlar sözlük adı ve yayın yılına göre gruplandırılır.
+
+**Ne zaman kullanılır:** Akademik metin okurken ya da yazarken teknik bir terimin Türkçe karşılığını veya yabancı dil eşdeğerini bulmak istediğinizde.
+
+**Örnek:** *Enlem* kelimesini `B` ile arattığınızda Gökbilim, Coğrafya ve Matematik terimleri sözlüklerinden ayrı ayrı sonuçlar gelir:
+- **Gökbilim Terimleri Sözlüğü (1969):** Türkçe: *arz derecesi* | İngilizce: *latitude* | Fransızca: *latitude* | Almanca: *Breite* — Bir küre üzerindeki herhangi bir noktanın temel düzlemden açısal uzaklığı…
+- **Coğrafya Terimleri Sözlüğü (1980):** Türkçe: *coğrafi arz* | İngilizce: *latitude* — Yeryuvarı üzerinde herhangi bir noktadan geçen koşut çemberin eşlekle arasındaki yay parçasının açısal değeri.
 
 ---
 
@@ -174,7 +193,7 @@ Sözlüklerde karşılık bulamadığınız özel isimler, teknik terimler, kıs
 
 **Ne zaman kullanılır:** Kavramı biliyorsunuz ama onu en iyi ifade eden deyimi unuttuğunuzda. Klasik sözlüklerin yapamadığı "anlam odaklı" aramayı gerçekleştirir.
 
-**Örnek:** *Hız* yazıp arattığınızda, başlığında "hız" geçmese de tanımında "hızla" veya "süratle" geçen tüm deyimler listelenir. *İt ürür, kervan yürür* gibi beklenmedik bir eşleşmeye bile rastlayabilirsiniz.
+**Örnek:** *Sabır* yazıp arattığınızda, başlığında "sabır" geçmeyen ancak tanımında bu kavrama değinen deyimler de listelenir; kavramı farklı biçimlerde dile getiren kalıpları bir arada görürsünüz.
 
 ---
 
@@ -237,7 +256,7 @@ Katman komutundan sonra `0` (Sıfır) tuşuna basın.
 
 Elinizdeki harfleri girin (örn: *k r a a l*). Eklenti, bu harflerle yazılabilecek Türkçe kelimeleri uzundan kısaya sıralayarak listeler.
 
-**Örnek:** *a l a k* harflerini girerseniz: kala, laka, kaal… gibi geçerli kombinasyonları görürsünüz. Bulmaca ve kelime oyunları için güçlü bir araç.
+**Örnek:** *a l a k* harflerini girerseniz *kala* ve *laka* gibi geçerli Türkçe kelimeler listelenir. Bulmaca ve kelime oyunları için güçlü bir araç.
 
 ---
 
@@ -270,11 +289,14 @@ Açılan listeden bir öğeyi seçince o işlem doğrudan başlatılır; liste `
 | Tuş | İşlev |
 |-----|-------|
 | `1` | TDK + Dil Derneği (Birleşik) |
+| `"` | Üçlü Arama (TDK + Dil Derneği + Kubbealtı) |
 | `2` | TDK Atasözleri ve Deyimler |
 | `3` | Vikisözlük (tarayıcı) |
 | `4` | Nişanyan Sözlük (tarayıcı) |
 | `5` | Kubbealtı Lugatı (API) |
-| `"` | Üçlü Arama (TDK + Dil Derneği + Kubbealtı) |
+| `6` | Sadece TDK Güncel Türkçe Sözlük |
+| `7` | Sadece Dil Derneği |
+| `B` | TDK Bilim ve Sanat Terimleri |
 | `Q` | Google |
 | `W` | DuckDuckGo |
 | `E` | Bing |
