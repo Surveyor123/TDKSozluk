@@ -1,4 +1,4 @@
-# TDK ve Sözlükler (Sürüm 2026.4.4)
+# TDK ve Sözlükler (Sürüm 2026.5.3)
 
 * **Yazar:** NVDA_TR
 * **Uyumluluk:** NVDA 2022.1 ve sonrası
@@ -6,7 +6,9 @@
 **🔔 Eklenti İşlev ve Özellikleri:**
 
 * TDK, Dil Derneği ve Kubbealtı Lugatı'nda ayrı ayrı, ikili veya üçlü birleşik arama imkânı.
-* TDK Bilim ve Sanat Terimleri Sözlüğü entegrasyonu (70 civarında alt sözlük, çok dilli karşılıklar).
+* TDK Bilim ve Sanat Terimleri Sözlüğü entegrasyonu (70'ten fazla bilim dalı, çok dilli karşılıklar).
+* **Çevrimdışı Müzik Terimleri Sözlüğü (4700+ madde, hem madde adı hem tanım içi arama).** *(Güncellendi)*
+* **TDK Kişi Adları Sözlüğü entegrasyonu (ada göre ve anlama göre arama).** *(Yeni)*
 * Kelime listeleme özelliği (İle başlayan / İle biten kelimeler).
 * Akıllı Atasözü ve Deyim arama algoritması.
 * Dahili Deyimler ve Atasözleri sözlükleri (çevrimdışı çalışır).
@@ -165,6 +167,30 @@ Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir
 
 ---
 
+---
+
+### `Ö` — TDK Kişi Adları Sözlüğü (Ada Göre Arama) *(yeni)*
+
+**Ne işe yarar:** TDK'nın Kişi Adları Sözlüğü'nü ada göre sorgular (`sozluk.gov.tr`). Aranan adın anlamını, kökenini ve cinsiyetini gösterir.
+
+* Tek sonuç varsa doğrudan gösterir.
+* Birden fazla sonuç varsa seçilebilir bir liste açılır.
+
+**Ne zaman kullanılır:** Bir ismin anlamını ya da kökenini merak ettiğinizde. Doğum tescili için uygun isim araştırırken, edebi bir metinde geçen karakter adının ardındaki anlam katmanını keşfetmek istediğinizde.
+
+**Örnek:** *Deniz* yazıp `Ö` ile arattığınızda adın Türkçe kökenli olduğunu, hem kız hem erkek adı olarak kullanıldığını ve "büyük su kütlesi" anlamını taşıdığını görürsünüz.
+
+---
+
+### `Ç` — TDK Kişi Adları Sözlüğü (Anlama Göre Arama) *(yeni)*
+
+**Ne işe yarar:** Aynı TDK Kişi Adları Sözlüğü'nü bu sefer **anlam içinde** arama yaparak sorgular. Girdiğiniz kavramı tanımında barındıran tüm adları listeler.
+
+**Ne zaman kullanılır:** Belirli bir anlam veya kavramı taşıyan isimler bulmak istediğinizde. `Ö` tuşunun ada göre aradığını `Ç` anlama göre arar.
+
+**Örnek:** *Işık* yazıp `Ç` ile arattığınızda tanımında ışık, aydınlık veya parlaklık kavramı geçen tüm adlar listelenir: Aydın, Nûr, Ziya, Işıl ve diğerleri.
+
+
 ### `Q` – `T` — Arama Motorları *(tarayıcıda açılır)*
 
 Sözlüklerde karşılık bulamadığınız özel isimler, teknik terimler, kısaltmalar veya güncel olaylar için seçili metni doğrudan tarayıcıda arar:
@@ -194,6 +220,28 @@ Sözlüklerde karşılık bulamadığınız özel isimler, teknik terimler, kıs
 **Ne zaman kullanılır:** Kavramı biliyorsunuz ama onu en iyi ifade eden deyimi unuttuğunuzda. Klasik sözlüklerin yapamadığı "anlam odaklı" aramayı gerçekleştirir.
 
 **Örnek:** *Sabır* yazıp arattığınızda, başlığında "sabır" geçmeyen ancak tanımında bu kavrama değinen deyimler de listelenir; kavramı farklı biçimlerde dile getiren kalıpları bir arada görürsünüz.
+
+---
+
+### `M` — Müzik Terimleri Sözlüğü *(çevrimdışı)*
+
+**Ne işe yarar:** 4700'ü aşkın müzik terimini barındıran çevrimdışı sözlükte **madde adına göre** arama yapar. Türk müziği makamları, çalgı adları, Batı müziği terimleri ve icra yönergeleri aynı veritabanında bir arada yer alır.
+
+Sözlük üç ana kaynaktan oluşur: Turkish Music Portal, Evin İlyasoğlu'nun Müzik Terimleri Sözlüğü ve Vural Sözer'in Müzik Terimleri Sözlüğü. Bu üç kaynağın ortak maddeleri tekilleştirilerek birleştirilmiştir.
+
+**Ne zaman kullanılır:** Müzik metni okurken ya da yazarken karşılaştığınız bir terimin tanımına hızlıca ulaşmak istediğinizde. Birden fazla eşleşme varsa seçilebilir bir liste açılır.
+
+**Örnek:** *Makam* yazıp `M` ile arattığınızda makam, makam geçişi, makam taşıması gibi başlıklar listelenir; birini seçince tam tanıma ulaşırsınız.
+
+---
+
+### `N` — Müzik Terimleri (Tanım İçi Arama) *(çevrimdışı)*
+
+**Ne işe yarar:** Aynı müzik sözlüğünde bu sefer **tanımların içinde** arama yapar. Aranan kavramın madde başlığında değil, açıklamasında geçtiği tüm maddeler listelenir.
+
+**Ne zaman kullanılır:** Bir kavramı içeren ama o kavramı başlığa taşımamış maddeleri bulmak istediğinizde. `S` tuşunun atasözleri sözlüğüne yaptığını `N` müzik sözlüğüne yapar.
+
+**Örnek:** *Perde* yazıp `N` ile arattığınızda, başlığında "perde" geçmeyen ancak tanımında bu terimi kullanan tüm maddeler listelenir.
 
 ---
 
@@ -303,8 +351,12 @@ Açılan listeden bir öğeyi seçince o işlem doğrudan başlatılır; liste `
 | `R` | Yahoo |
 | `T` | Yandex |
 | `A` | Çevrimdışı Atasözleri Sözlüğü |
-| `I` | Tureng (İngilizce ↔ Türkçe) |
 | `S` | Tersine Arama (Kavramdan Deyime) |
+| `M` | Müzik Terimleri Sözlüğü (madde adı) |
+| `N` | Müzik Terimleri (tanım içi arama) |
+| `I` | Tureng (İngilizce ↔ Türkçe) |
+| `Ö` | TDK Kişi Adları Sözlüğü (ada göre) |
+| `Ç` | TDK Kişi Adları Sözlüğü (anlama göre) |
 | `*` | İle Başlayan Kelimeler |
 | `-` | İle Biten Kelimeler |
 | `0` | Anagram Çözücü |
@@ -346,4 +398,4 @@ Bu eklentinin satır satır işlenmesinde ve kodlanmasında emeği geçen şahs�
 
 Bu projenin asıl kıvılcımı **Tuba Vural** sayesinde çakıldı. Fikrin NVDA_TR grubunda filizlenmesinden bugünkü haline gelmesine kadar; test süreçleri, geri bildirimler, kaynak önerileri ve içerik derleme konularındaki titiz çabası ve yol arkadaşlığı için kendisine en içten teşekkürlerimi sunuyorum.
 
-Kodlama sürecindeki desteği için yapay zeka asistanlarımız **Google Gemini** ve **Claude**'a; bilgi hazinelerinden faydalandığımız **TDK**, **Dil Derneği**, **Kubbealtı** ve **Tureng** gibi köklü kurumlara; eserlerini eklentimize dahil ederek değer kattığımız **Ülkü & Hüseyin Kuşçu** ve **Ömer Asım Aksoy** gibi kıymetli isimlere saygılarımızla...
+Kodlama sürecindeki desteği için yapay zeka asistanlarımız **Google Gemini** ve **Claude**'a; bilgi hazinelerinden faydalandığımız **TDK**, **Dil Derneği**, **Kubbealtı** ve **Tureng** gibi köklü kurumlara; eserlerini eklentimize dahil ederek değer kattığımız **Ülkü & Hüseyin Kuşçu**, **Ömer Asım Aksoy** ve **Vural Sözer** gibi kıymetli isimlere saygılarımızla...
