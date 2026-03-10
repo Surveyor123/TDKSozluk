@@ -1,4 +1,4 @@
-# TDK ve Sözlükler (Sürüm 2026.5.3)
+# TDK ve Sözlükler (Sürüm 2026.5.4)
 
 * **Yazar:** NVDA_TR
 * **Uyumluluk:** NVDA 2022.1 ve sonrası
@@ -7,9 +7,11 @@
 
 * TDK, Dil Derneği ve Kubbealtı Lugatı'nda ayrı ayrı, ikili veya üçlü birleşik arama imkânı.
 * TDK Bilim ve Sanat Terimleri Sözlüğü entegrasyonu (70'ten fazla bilim dalı, çok dilli karşılıklar).
-* **Çevrimdışı Müzik Terimleri Sözlüğü (4700+ madde, hem madde adı hem tanım içi arama).** *(Güncellendi)*
-* **TDK Kişi Adları Sözlüğü entegrasyonu (ada göre ve anlama göre arama).** *(Yeni)*
+* **TDK Derleme Sözlüğü entegrasyonu (yöresel ağız kelimeleri, bölge ve künye bilgisiyle).** *(Yeni)*
+* Çevrimdışı Müzik Terimleri Sözlüğü (4700+ madde, hem madde adı hem tanım içi arama).
+* TDK Kişi Adları Sözlüğü entegrasyonu (ada göre ve anlama göre arama).
 * Kelime listeleme özelliği (İle başlayan / İle biten kelimeler).
+* **Anagram ve kelime listesi sonuçları artık varsayılan veya geçici seçili kaynakta aranır.** *(Güncellendi)*
 * Akıllı Atasözü ve Deyim arama algoritması.
 * Dahili Deyimler ve Atasözleri sözlükleri (çevrimdışı çalışır).
 * Tureng (İngilizce-Türkçe / Türkçe-İngilizce) sözlük entegrasyonu.
@@ -167,9 +169,17 @@ Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir
 
 ---
 
+### `D` — TDK Derleme Sözlüğü *(doğrudan API, tarayıcı açılmaz)* *(Yeni)*
+
+**Ne işe yarar:** TDK'nın Türkiye Türkçesi Ağızları Sözlüğü'nü sorgular. Anadolu'nun dört bir yanından derlenen yöresel ağız kelimelerini, anlamlarını, kullanıldıkları bölgeleri ve kaynak künye bilgilerini (eser adı, yazar, yayın yılı) tam olarak gösterir. Aynı kelimenin farklı illerdeki anlam değişimleri madde başlıklarıyla ayrıştırılmış şekilde sunulur; künye bilgileri gereksiz tekrar yapılmadan gruplandırılır.
+
+**Ne zaman kullanılır:** Standart sözlüklerde bulunmayan yöresel bir kelimeyle karşılaştığınızda; bir kelimenin farklı illerdeki anlam değişimlerini merak ettiğinizde; tarihî veya lehçe araştırmalarında kaynak künye bilgisine ihtiyaç duyduğunuzda.
+
+**Örnek:** *hor* kelimesini `D` ile arattığınızda kelimenin Trabzon'da "yumurta sarısı", Gaziantep'te "gösterişsiz, çelimsiz", Sivas'ta "bereketsiz" gibi birbirinden farklı anlamlarda kullanıldığı; her anlamın hangi eserde, hangi yazar tarafından derlendiği künye bilgisiyle birlikte gösterilir.
+
 ---
 
-### `Ö` — TDK Kişi Adları Sözlüğü (Ada Göre Arama) *(yeni)*
+### `Ö` — TDK Kişi Adları Sözlüğü (Ada Göre Arama)
 
 **Ne işe yarar:** TDK'nın Kişi Adları Sözlüğü'nü ada göre sorgular (`sozluk.gov.tr`). Aranan adın anlamını, kökenini ve cinsiyetini gösterir.
 
@@ -182,7 +192,7 @@ Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir
 
 ---
 
-### `Ç` — TDK Kişi Adları Sözlüğü (Anlama Göre Arama) *(yeni)*
+### `Ç` — TDK Kişi Adları Sözlüğü (Anlama Göre Arama)
 
 **Ne işe yarar:** Aynı TDK Kişi Adları Sözlüğü'nü bu sefer **anlam içinde** arama yaparak sorgular. Girdiğiniz kavramı tanımında barındıran tüm adları listeler.
 
@@ -254,7 +264,7 @@ Katman komutunu (`NVDA`+`Shift`+`,`) uyguladıktan sonra:
 * **`*` (Yıldız):** Seçili veya yazılan ifadeyle **BAŞLAYAN** kelimeleri listeler.
 * **`-` (Tire):** Seçili veya yazılan ifadeyle **BİTEN** kelimeleri listeler.
 
-Listeden bir kelime seçip `Enter`'a basınca eklenti o kelimeyi otomatik olarak **Birleşik Arama** modunda sorgular.
+Listeden bir kelime seçip `Enter`'a basınca eklenti o kelimeyi **o an etkin olan kaynakta** sorgular. Katman menüsünden geçici bir kaynak seçilmişse o kaynak, seçilmemişse ayarlardaki varsayılan kaynak kullanılır.
 
 **Örnek:** *Çiçek* yazıp `*` tuşuna basarsanız: çiçek, çiçekli, çiçekçi, çiçekalma, çiçeklenmek… gibi onlarca sonuç listelenir. `-` tuşuyla *lik* yazıp ararsanız "lik" ile biten tüm kelimeleri bulursunuz.
 
@@ -302,7 +312,7 @@ Modül, seçilen verinin türüne göre otomatik karar verir:
 
 Katman komutundan sonra `0` (Sıfır) tuşuna basın.
 
-Elinizdeki harfleri girin (örn: *k r a a l*). Eklenti, bu harflerle yazılabilecek Türkçe kelimeleri uzundan kısaya sıralayarak listeler.
+Elinizdeki harfleri girin (örn: *k r a a l*). Eklenti, bu harflerle yazılabilecek Türkçe kelimeleri uzundan kısaya sıralayarak listeler. Listeden bir kelime seçtiğinizde **o an etkin olan kaynakta** aranır; katman menüsünden geçici kaynak seçilmişse o kaynak, seçilmemişse varsayılan kaynak kullanılır.
 
 **Örnek:** *a l a k* harflerini girerseniz *kala* ve *laka* gibi geçerli Türkçe kelimeler listelenir. Bulmaca ve kelime oyunları için güçlü bir araç.
 
@@ -345,6 +355,7 @@ Açılan listeden bir öğeyi seçince o işlem doğrudan başlatılır; liste `
 | `6` | Sadece TDK Güncel Türkçe Sözlük |
 | `7` | Sadece Dil Derneği |
 | `B` | TDK Bilim ve Sanat Terimleri |
+| `D` | TDK Derleme Sözlüğü *(Yeni)* |
 | `Q` | Google |
 | `W` | DuckDuckGo |
 | `E` | Bing |
@@ -374,7 +385,7 @@ Açılan listeden bir öğeyi seçince o işlem doğrudan başlatılır; liste `
 
 | Ayar | Açıklama |
 |------|----------|
-| **Varsayılan Kaynak** | `NVDA`+`,` tuşuna basıldığında doğrudan hangi sözlüğün çalışacağını belirler. |
+| **Varsayılan Kaynak** | `NVDA`+`,` hızlı araması ile kelime listesi ve anagram sonuçlarından yapılan aramalar bu kaynağı kullanır. |
 | **Tureng Limiti** | Tureng sonuç sayısı. `0` veya boş bırakılırsa tamamı gösterilir. Varsayılan: 30. |
 | **TDK Örnek Cümleleri** | TDK sonuçlarında örnek cümlelerin gösterilip gösterilmeyeceği. |
 | **Otomatik Kopyalama** | Bulunan sonucun otomatik olarak panoya kopyalanması. |
@@ -389,6 +400,7 @@ Açılan listeden bir öğeyi seçince o işlem doğrudan başlatılır; liste `
 * **Pencereyi kapatmak:** Sonuç pencereleri NVDA'nın sanal görüntüleme penceresinde açılır. `Esc` ile kapatılır.
 * **Tuşları özelleştirmek:** *NVDA Menüsü → Tercihler → Girdi Hareketleri → TDK ve Sözlükler* yolundan tüm komutlara istediğiniz kısayolu atayabilirsiniz.
 * **Katman kuralı:** Katman komutundan sonra basılan tuş, yalnızca o an geçerlidir; ardından katman kapanır. Birden fazla işlem yapmak için her seferinde katmanı yeniden açmanız ya da `<` listesini kullanmanız gerekir.
+* **Geçici kaynak seçimi:** Katman menüsünden seçtiğiniz kaynak o oturum için geçici olarak etkinleşir. Kelime listesi, anagram ve `NVDA`+`,` hızlı araması bu geçici seçimi dikkate alır.
 
 ---
 
