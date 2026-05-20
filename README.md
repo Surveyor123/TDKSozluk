@@ -5,20 +5,21 @@
 
 **🔔 Eklenti İşlev ve Özellikleri:**
 
-* TDK, Dil Derneği ve Kubbealtı Lugatı'nda ayrı ayrı, ikili veya üçlü birleşik arama imkânı.
-* **Beşli Arama: TDK + Dil Derneği + Vikisözlük + Nişanyan + Kubbealtı tek pencerede.** *(Yeni)*
-* TDK Bilim ve Sanat Terimleri Sözlüğü entegrasyonu (70'ten fazla bilim dalı, çok dilli karşılıklar).
-* **Çevrimdışı Müzik Terimleri Sözlüğü (4700+ madde, hem madde adı hem tanım içi arama).**
-* **TDK Kişi Adları Sözlüğü entegrasyonu (ada göre ve anlama göre arama).**
-* **Kelime listeleme (İle başlayan / İle biten) artık kaynak seçimine sahip.** *(Güncellendi)*
-* **Anagram çözücüde kaynak seçimi.** *(Güncellendi)*
-* **Sonuç pencerelerinde NVDA+Alt+C ile alıntı olarak kopyalama (CF_HTML + düz metin).** *(Yeni)*
+* TDK, Dil Derneği ve Kubbealtı Lugatı'nda ayrı ayrı, ikili veya çoklu birleşik arama imkânı.
+* **Çoklu Arama ve Çoklu Arama 2: kaynaklarını ayarlardan özelleştirebileceğiniz iki yapılandırılabilir birleşik arama modu.** *(Güncellendi)*
+* **Çevrimdışı Eş/Zıt Anlamlı Sözlük — 42.000'den fazla kelime, internet bağlantısı gerekmez.** *(Yeni)*
+* TDK Bilim ve Sanat Terimleri Sözlüğü (70'ten fazla bilim dalı, çok dilli karşılıklar).
+* Çevrimdışı Müzik Terimleri Sözlüğü (4700+ madde, madde adı ve tanım içi arama).
+* TDK Kişi Adları Sözlüğü (ada göre ve anlama göre arama).
+* Kelime listeleme (İle başlayan / İle biten) kaynak seçimiyle.
+* Anagram çözücü kaynak seçimiyle.
+* Sonuç pencerelerinden biçimli alıntı kopyalama (CF_HTML + düz metin).
 * Akıllı Atasözü ve Deyim arama algoritması.
 * Dahili Deyimler ve Atasözleri sözlükleri (çevrimdışı çalışır).
 * Tureng (İngilizce-Türkçe / Türkçe-İngilizce) sözlük entegrasyonu.
-* **TDK Derleme Sözlüğü (Türkiye Türkçesi Ağızları — yöresel kelimeler ve yörelerine göre anlamları).**
+* TDK Derleme Sözlüğü (Türkiye Türkçesi Ağızları — yöresel kelimeler ve yörelerine göre anlamları).
 * İngilizceden İngilizceye sözlük, Metin Analizi, IP ve ISBN çözümleme.
-* **Vikisözlük ve Nişanyan Sözlük sonuçları artık NVDA penceresinde gösterilir; tarayıcı açılmaz.** *(Güncellendi)*
+* Vikisözlük ve Nişanyan Sözlük sonuçları NVDA penceresinde gösterilir; tarayıcı açılmaz.
 * Arama geçmişi (son 100 arama oturum boyunca bellekte tutulur).
 * Günün Kelimesi önbelleği (aynı gün içinde tekrar API çağrısı yapılmaz).
 * Katman menüsünden etkileşimli tuş listesi.
@@ -41,7 +42,7 @@ Eklenti, bu kaynakların API'lerine ve veri akışlarına doğrudan erişerek ya
 
 Bu yaklaşımın somut karşılığı şudur: Bir Osmanlıca edebi metni okurken karşılaştığınız *müstağni* kelimesinin TDK'daki modern karşılığını, Kubbealtı'daki köklü tanımını ve Dil Derneği'nin sade açıklamasını **tek bir tuş kombinasyonuyla** ve **tarayıcınızı açmadan** yan yana görebilirsiniz.
 
-### Beş kurum, tek pencere
+### Birden fazla kurum, tek pencere
 
 Türk dil kurumları birbirini tamamlar, birbirinin alternatifi değildir:
 
@@ -51,7 +52,7 @@ Türk dil kurumları birbirini tamamlar, birbirinin alternatifi değildir:
 - **Vikisözlük** — Topluluk tarafından derlenen; argo, bölgesel ağız ve neolojizmleri resmi kurumlardan önce kapsayan açık kaynak.
 - **Nişanyan Sözlük** — Sevan Nişanyan'ın hazırladığı etimoloji sözlüğü; kelimenin köken dilini, ilk belgelendiği tarihi ve anlam değişiminin izini sürer.
 
-Katman menüsündeki `F` tuşuyla bu beş kaynağın yanıtı **tek bir pencerede** üst üste gelir. Kaynaklar aynı anda paralel olarak sorgulanır; toplam bekleme süresi en yavaş API kadardır.
+Katman menüsündeki `F` tuşuyla **Çoklu Arama**, `"` tuşuyla **Çoklu Arama 2** başlatılır; seçili kaynakların yanıtları tek bir pencerede üst üste gelir. Her iki aramanın hangi kaynakları sorguladığı ayarlar panelinden özelleştirilebilir. Kaynaklar paralel sorgulandığından toplam bekleme süresi en yavaş API kadardır.
 
 ### Az tuş, çok işlev
 
@@ -83,7 +84,7 @@ Kısayol: `NVDA` + `Shift` + `,` (Virgül)
 
 Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir özet seslendirir; ardından yalnızca bir tuşa basarak istediğiniz kaynağı seçersiniz.
 
-**Tüm tuş listesi için `<` (Küçüktür) tuşuna basın.** Açılan listeden bir seçenek seçtiğinizde o işlem başlar; liste kapanmadan başka işlemler de yapabilirsiniz.
+**Tüm tuş listesi için `<` (Küçüktür) tuşuna basın.**
 
 ---
 
@@ -97,9 +98,9 @@ Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir
 
 ---
 
-### `"` — Üçlü Arama (TDK + Dil Derneği + Kubbealtı Lugatı)
+### `"` — Çoklu Arama 2 *(Güncellendi)*
 
-**Ne işe yarar:** Birleşik arama `1`'in genişletilmiş halidir. Üç kaynağı paralel sorgular ve tek pencerede sunar.
+**Ne işe yarar:** Varsayılan olarak TDK + Dil Derneği + Kubbealtı Lugatı'nı paralel sorgular; sonuçları tek pencerede sunar. Hangi kaynakların sorgulanacağı **ayarlar panelinden** özelleştirilebilir.
 
 **Ne zaman kullanılır:** Özellikle Osmanlıca kökenli, arkaik veya edebi kelimelerle karşılaştığınızda bu mod çok değer katar. Kubbealtı, kelimenin dildeki tarihsel serüvenini, edebi örneklerde nasıl kullanıldığını ve Arapça ya da Farsça kökenini belgeler.
 
@@ -130,9 +131,9 @@ Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir
 
 ---
 
-### `F` — Beşli Arama *(TDK + Dil Derneği + Vikisözlük + Nişanyan + Kubbealtı)*
+### `F` — Çoklu Arama *(Güncellendi)*
 
-**Ne işe yarar:** Beş kaynağı aynı anda paralel olarak sorgular ve sonuçları tek bir NVDA penceresinde üst üste gösterir.
+**Ne işe yarar:** Varsayılan olarak TDK, Dil Derneği, Vikisözlük, Nişanyan ve Kubbealtı'nı aynı anda paralel sorgular; sonuçları tek bir NVDA penceresinde üst üste gösterir. Hangi kaynakların dahil edileceği **ayarlar panelinden** özelleştirilebilir — listeye Eş/Zıt Anlamlılar, TDK Bilim Sözlüğü ve TDK Derleme Sözlüğü de eklenebilir.
 
 **Ne zaman kullanılır:** Bir kelimeyi en kapsamlı biçimde araştırmak istediğinizde. Tek sorguda hem çağdaş Türkçe karşılığını (TDK, Dil Derneği), hem kökenini (Nişanyan), hem topluluk tanımını (Vikisözlük), hem de tarihsel ve edebi bağlamını (Kubbealtı) yan yana görebilirsiniz.
 
@@ -239,6 +240,18 @@ Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir
 
 ---
 
+### `Z` — Eş/Zıt Anlamlı Sözlük *(çevrimdışı)* *(Yeni)*
+
+**Ne işe yarar:** 42.000'den fazla kelimeyi kapsayan çevrimdışı eş/zıt anlamlı sözlükte arama yapar. Kaynak, Boğaziçi Üniversitesi bünyesinde derlenen ve akademisyenler tarafından elle doğrulanmış **KeNet Türkçe WordNet** veritabanıdır. İnternet bağlantısı gerekmez.
+
+**Ne zaman kullanılır:** Bir kelimenin yerine geçebilecek başka kelimeler ararken, yazarken eş anlamlı seçenek değerlendirirken ya da zıt anlamlıları öğrenmek istediğinizde.
+
+**Örnek:** *Güzel* yazıp arattığınızda eş anlamlı olarak *hoş*, *latif*, *tatlı*, *şirin* gibi seçenekler; zıt anlamlı olarak *çirkin* listelenir. *Büyük* için eş anlamlılar arasında *iri*, *koca*, *kocaman*; zıt anlamlılar arasında *küçük*, *ufak* görünür.
+
+**Not:** Sözlük kelime köklerine göre çalışır; arama küçük harfe dönüştürülerek yapılır.
+
+---
+
 ### `D` — TDK Derleme Sözlüğü *(Türkiye Türkçesi Ağızları)*
 
 **Ne işe yarar:** TDK'nın Derleme Sözlüğü'nü sorgular. Standart Türkçede bulunmayan ya da farklı anlamlar kazanmış yöresel kelimeleri; anlamları, kullanıldıkları il ve ilçeler ile kaynak künyesiyle birlikte sunar.
@@ -312,7 +325,7 @@ Elinizdeki harfleri girin (örn: *k r a a l*). Eklenti, bu harflerle yazılabile
 
 * **Erişim:** Katman komutundan sonra `H` tuşuna basın.
 * **İşlevi:** Son 100 aramayı en yeniden eskiye doğru listeler. Seçtiğiniz arama aynı sözlükte yenilenir.
-* **Not:** Geçmiş yalnızca oturum süresince bellekte tutulur; NVDA kapatılınca sıfırlanır.
+* **Not:** Geçmiş, oturumlar arasında diske kaydedilir; NVDA kapatılıp açıldıktan sonra da korunur.
 
 ---
 
@@ -337,8 +350,8 @@ Tüm tuşları ve işlevlerini tek pencerede görmek için katman komutundan son
 | Tuş | İşlev |
 |-----|-------|
 | `1` | TDK + Dil Derneği (Birleşik) |
-| `"` | Üçlü Arama (TDK + Dil Derneği + Kubbealtı) |
-| `F` | Beşli Arama (TDK + DD + Vikisözlük + Nişanyan + Kubbealtı) |
+| `"` | Çoklu Arama 2 (Yapılandırılabilir — varsayılan: TDK + Dil Derneği + Kubbealtı) |
+| `F` | Çoklu Arama (Yapılandırılabilir — varsayılan: TDK + DD + Vikisözlük + Nişanyan + Kubbealtı) |
 | `2` | TDK Atasözleri ve Deyimler |
 | `3` | Vikisözlük (NVDA penceresinde) |
 | `4` | Nişanyan Sözlük (NVDA penceresinde) |
@@ -355,6 +368,7 @@ Tüm tuşları ve işlevlerini tek pencerede görmek için katman komutundan son
 | `S` | Tersine Arama (Kavramdan Deyime) |
 | `M` | Müzik Terimleri Sözlüğü (madde adı) |
 | `N` | Müzik Terimleri (tanım içi arama) |
+| `Z` | Eş/Zıt Anlamlı Sözlük (çevrimdışı) |
 | `D` | TDK Derleme Sözlüğü (Türkiye Türkçesi Ağızları) |
 | `I` | Tureng (İngilizce ↔ Türkçe) |
 | `Ö` | TDK Kişi Adları Sözlüğü (ada göre) |
@@ -385,6 +399,8 @@ Tüm tuşları ve işlevlerini tek pencerede görmek için katman komutundan son
 | **Sesli Geri Bildirim** | Arama başladığında bip sesi. |
 | **Sonuç Bildirim Türü** | Sonucun pencerede mi gösterileceği yoksa yalnızca mı sesletileceği. |
 | **Başlangıç Bildirimi** | NVDA açılışında Günün Kelimesi'nin otomatik okunması. |
+| **Çoklu Arama Kaynakları** *(Güncellendi)* | Çoklu Arama'nın (`F` tuşu) hangi sözlükleri sorgulayacağını belirler. Ok tuşlarıyla gezilip Boşluk ile işaretlenebilen listeden TDK, Dil Derneği, Kubbealtı, Vikisözlük, Nişanyan, Eş/Zıt Anlamlılar, TDK Bilim Sözlüğü ve TDK Derleme Sözlüğü arasından seçim yapılır. Varsayılan: TDK + Dil Derneği + Vikisözlük + Nişanyan + Kubbealtı. |
+| **Çoklu Arama 2 Kaynakları** *(Güncellendi)* | Çoklu Arama 2'nin (`"` tuşu) hangi sözlükleri sorgulayacağını belirler. Aynı kaynak listesinden seçim yapılır. Varsayılan: TDK + Dil Derneği + Kubbealtı. |
 
 ---
 
