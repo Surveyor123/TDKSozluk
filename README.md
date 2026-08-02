@@ -1,15 +1,18 @@
-# TDK ve Sözlükler (Sürüm 2026.6.0)
+# TDK ve Sözlükler
 
-* **Yazar:** NVDA_TR
+* **Yazar:** Çağrı Doğan
 * **Uyumluluk:** NVDA 2022.1 ve sonrası
 
-**🔔 Eklenti İşlev ve Özellikleri:**
+** Eklenti İşlev ve Özellikleri:**
 
 * TDK, Dil Derneği ve Kubbealtı Lugatı'nda ayrı ayrı, ikili veya çoklu birleşik arama imkânı.
 * **Çoklu Arama ve Çoklu Arama 2: kaynaklarını ayarlardan özelleştirebileceğiniz iki yapılandırılabilir birleşik arama modu.** *(Güncellendi)*
 * **Çevrimdışı Eş/Zıt Anlamlı Sözlük — 42.000'den fazla kelime, internet bağlantısı gerekmez.** *(Yeni)*
+* **Çevrimdışı Kafiye Sözlüğü — 81.000'den fazla kelime; zengin, tam ve yarım kafiye gruplarıyla.** *(Yeni)*
 * TDK Bilim ve Sanat Terimleri Sözlüğü (70'ten fazla bilim dalı, çok dilli karşılıklar).
 * Çevrimdışı Müzik Terimleri Sözlüğü (4700+ madde, madde adı ve tanım içi arama).
+* **Çevrimdışı Argo Sözlüğü — Hulki Aktunç'un Büyük Argo Sözlüğü'nden 5.200'den fazla madde, internet bağlantısı gerekmez.** *(Yeni)*
+* **TDK Batı Kökenli Sözcükler Sözlüğü — batı kökenli sözcüklerin Türkçe açıklamaları ve örnek cümleler.** *(Yeni)*
 * TDK Kişi Adları Sözlüğü (ada göre ve anlama göre arama).
 * Kelime listeleme (İle başlayan / İle biten) kaynak seçimiyle.
 * Anagram çözücü kaynak seçimiyle.
@@ -26,7 +29,7 @@
 
 ---
 
-## 🎯 Eklentinin Felsefesi
+## Eklentinin Felsefesi
 
 Türkçe, binlerce yıllık kültürel birikimin taşıyıcısı olan bir dildir. Kelimelerin anlamını, kökenini ve kullanım bağlamını kavramak; sadece bir tanım öğrenmek değil, dilin iç dünyasıyla kurulan bir ilişkidir. Ancak bu ilişkiyi kurmak için gereken her araç — TDK, Dil Derneği, Kubbealtı, Nişanyan — günümüzde ya görsel arayüzlerle çevrilmiş, ya reklam katmanlarının arkasına gömülmüş ya da ekran okuyucuyla güçlükle gezilebilen web sayfaları hâline gelmiştir.
 
@@ -240,6 +243,24 @@ Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir
 
 ---
 
+### `J` — Argo Sözlüğü *(çevrimdışı)* *(Yeni)*
+
+**Ne işe yarar:** Hulki Aktunç'un *Türkçenin Büyük Argo Sözlüğü*'nden derlenen 5.200'den fazla maddeyi barındıran çevrimdışı sözlükte **madde adına göre** arama yapar. Birden fazla eşleşme varsa seçilebilir bir liste açılır.
+
+**Ne zaman kullanılır:** Bir argo sözcüğün tanımını, etimolojisini veya örnek kullanımını merak ettiğinizde. Sokak dili, tarihi Türkçe argo ve toplumsal jargon açısından kapsamlı bir kaynak.
+
+**Örnek:** *Palavra* yazıp `J` ile arattığınızda kelimenin İspanyolca kökenini, tanımını ve Yahya Kemal'den alınan örnek cümleyi görürsünüz.
+
+---
+
+### `K` — Argo Sözlüğü (Tanım İçi Arama) *(çevrimdışı)* *(Yeni)*
+
+**Ne işe yarar:** Aynı argo sözlüğünde bu sefer **tanımların içinde** arama yapar. `S` tuşunun atasözleri sözlüğüne yaptığını, `N` tuşunun müzik sözlüğüne yaptığını `K` argo sözlüğüne yapar.
+
+**Ne zaman kullanılır:** Kavramı biliyorsunuz ama onu karşılayan argo sözcüğü bulamıyorsunuz. Örneğin *rezil* yazıp arattığınızda tanımında bu kavram geçen madde başlıkları listelenir.
+
+---
+
 ### `Z` — Eş/Zıt Anlamlı Sözlük *(çevrimdışı)* *(Yeni)*
 
 **Ne işe yarar:** 42.000'den fazla kelimeyi kapsayan çevrimdışı eş/zıt anlamlı sözlükte arama yapar. Kaynak, Boğaziçi Üniversitesi bünyesinde derlenen ve akademisyenler tarafından elle doğrulanmış **KeNet Türkçe WordNet** veritabanıdır. İnternet bağlantısı gerekmez.
@@ -249,6 +270,28 @@ Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir
 **Örnek:** *Güzel* yazıp arattığınızda eş anlamlı olarak *hoş*, *latif*, *tatlı*, *şirin* gibi seçenekler; zıt anlamlı olarak *çirkin* listelenir. *Büyük* için eş anlamlılar arasında *iri*, *koca*, *kocaman*; zıt anlamlılar arasında *küçük*, *ufak* görünür.
 
 **Not:** Sözlük kelime köklerine göre çalışır; arama küçük harfe dönüştürülerek yapılır.
+
+---
+
+### `Y` — Kafiye Sözlüğü *(çevrimdışı)* *(Yeni)*
+
+**Ne işe yarar:** 81.000'den fazla kelimeyi kapsayan çevrimdışı kafiye sözlüğünde arama yapar. Kaynak, **KeNet Türkçe WordNet** veritabanının kelime listesidir. Aranan kelimeyle sondan itibaren kaç harf ortaksa sonuçlar o kadar güçlü kafiye sayılır ve üç grupta listelenir: **Zengin Kafiye** (3 veya daha fazla ortak harf), **Tam Kafiye** (2 ortak harf) ve **Yarım Kafiye** (1 ortak harf). İnternet bağlantısı gerekmez; yanıt anlık gelir.
+
+**Ne zaman kullanılır:** Şiir veya şarkı sözü yazarken, tekerleme ararken ya da bir kelimeyle sesteş biten seçenekleri hızlıca görmek istediğinizde.
+
+**Örnek:** *Güzel* yazıp `Y` ile arattığınızda Zengin Kafiye grubunda *gazel*, *dizel*, *ezel*, *tüzel* gibi sonuçlar; *Mutlu* için ise *umutlu*, *kutlu*, *bulutlu* gibi sonuçlar görürsünüz.
+
+**Not:** Yarım Kafiye grubu kısa kelimelerde binlerce sonuç içerebileceğinden varsayılan olarak gösterilmez. Ayarlar panelinden "Sınırlı (İlk 100)" veya "Hepsini Göster" seçilerek etkinleştirilebilir.
+
+---
+
+### `X` — TDK Batı Kökenli Sözcükler *(Yeni)*
+
+**Ne işe yarar:** TDK'nın Batı Kökenli Sözcükler Sözlüğü'nü sorgular (`sozluk.gov.tr/bati`). Avrupa dillerinden Türkçeye geçmiş sözcükler için açıklamaları, sözcük türünü ve  örnek cümleler gösterir.
+
+**Ne zaman kullanılır:** Metinde karşılaştığınız batı  kökenli bir sözcüğün anlamını öğrenmek ve örnek cümleler istediğinizde. Öz Türkçe yazım hedeflerken veya çeviri yaparken pratik bir başvuru noktasıdır.
+
+**Örnek:** *Organizasyon* yazıp `X` ile arattığınızda örgütlenme* ya da *düzenleme* gibi Türkçe karşılıkları ve çeşitli eserlerden alıntılanan çok sayıda örnek cümle görürsünüz.
 
 ---
 
@@ -262,7 +305,7 @@ Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir
 
 ---
 
-### 🧩 Kelime Avcısı (Liste Modu) *(Güncellendi)*
+### Kelime Avcısı (Liste Modu) *(Güncellendi)*
 
 Bulmaca çözerken, şiir yazarken ya da bir kalıba uyan kelimeleri ararken kullanabileceğiniz listeleme özelliği.
 
@@ -283,7 +326,7 @@ Katman komutunu (`NVDA`+`Shift`+`,`) uyguladıktan sonra:
 
 ---
 
-### 📊 Metin Analizi ve Bilgi Sistemi
+### Metin Analizi ve Bilgi Sistemi
 
 Katman komutundan sonra `.` (Nokta) tuşuna basın.
 
@@ -303,7 +346,7 @@ Katman komutundan sonra `.` (Nokta) tuşuna basın.
 
 ---
 
-### 🔠 Anagram Çözücü *(Güncellendi)*
+### Anagram Çözücü *(Güncellendi)*
 
 Katman komutundan sonra `0` (Sıfır) tuşuna basın.
 
@@ -313,7 +356,7 @@ Elinizdeki harfleri girin (örn: *k r a a l*). Eklenti, bu harflerle yazılabile
 
 ---
 
-### 📅 TDK Günün İçeriği
+### TDK Günün İçeriği
 
 * **Elle erişim:** Katman komutundan sonra `G` tuşuna basın.
 * **Otomatik bildirim:** Ayarlar panelinden etkinleştirirseniz NVDA her açıldığında günün içeriği otomatik seslendirilir.
@@ -321,7 +364,7 @@ Elinizdeki harfleri girin (örn: *k r a a l*). Eklenti, bu harflerle yazılabile
 
 ---
 
-### 🕓 Arama Geçmişi
+### Arama Geçmişi
 
 * **Erişim:** Katman komutundan sonra `H` tuşuna basın.
 * **İşlevi:** Son 100 aramayı en yeniden eskiye doğru listeler. Seçtiğiniz arama aynı sözlükte yenilenir.
@@ -329,7 +372,7 @@ Elinizdeki harfleri girin (örn: *k r a a l*). Eklenti, bu harflerle yazılabile
 
 ---
 
-### 📋 Alıntı Olarak Kopyalama *(Yeni)*
+### Alıntı Olarak Kopyalama *(Yeni)*
 
 Bir sorgu yaptıktan sonra katman komutunu açın (`NVDA+Shift+,`) ve **`C`** tuşuna basın.
 
@@ -341,7 +384,7 @@ Bu özellik özellikle akademik veya gazetecilik bağlamında değerlidir: Bir t
 
 ---
 
-### 🗂️ Katman Tuş Listesi
+### Katman Tuş Listesi
 
 Tüm tuşları ve işlevlerini tek pencerede görmek için katman komutundan sonra `<` (Küçüktür) tuşuna basın.
 
@@ -368,7 +411,11 @@ Tüm tuşları ve işlevlerini tek pencerede görmek için katman komutundan son
 | `S` | Tersine Arama (Kavramdan Deyime) |
 | `M` | Müzik Terimleri Sözlüğü (madde adı) |
 | `N` | Müzik Terimleri (tanım içi arama) |
+| `J` | Argo Sözlüğü (madde adı) |
+| `K` | Argo Sözlüğü (tanım içi arama) |
 | `Z` | Eş/Zıt Anlamlı Sözlük (çevrimdışı) |
+| `Y` | Kafiye Sözlüğü (çevrimdışı) |
+| `X` | TDK Batı Kökenli Sözcüklere Türkçe Karşılıklar |
 | `D` | TDK Derleme Sözlüğü (Türkiye Türkçesi Ağızları) |
 | `I` | Tureng (İngilizce ↔ Türkçe) |
 | `Ö` | TDK Kişi Adları Sözlüğü (ada göre) |
@@ -385,7 +432,7 @@ Tüm tuşları ve işlevlerini tek pencerede görmek için katman komutundan son
 
 ---
 
-## ⚙️ Ayarlar ve Özelleştirme
+## Ayarlar ve Özelleştirme
 
 **NVDA Menüsü → Tercihler → Ayarlar → TDK ve Sözlükler**
 
@@ -399,12 +446,13 @@ Tüm tuşları ve işlevlerini tek pencerede görmek için katman komutundan son
 | **Sesli Geri Bildirim** | Arama başladığında bip sesi. |
 | **Sonuç Bildirim Türü** | Sonucun pencerede mi gösterileceği yoksa yalnızca mı sesletileceği. |
 | **Başlangıç Bildirimi** | NVDA açılışında Günün Kelimesi'nin otomatik okunması. |
+| **Kafiye Sözlüğünde Yarım Kafiye Gösterimi** *(Yeni)* | Yarım kafiye sonuçlarının (1 ortak harf) gösterilip gösterilmeyeceğini belirler: Gösterme (varsayılan), Sınırlı Göster (İlk 100) veya Hepsini Göster. |
 | **Çoklu Arama Kaynakları** *(Güncellendi)* | Çoklu Arama'nın (`F` tuşu) hangi sözlükleri sorgulayacağını belirler. Ok tuşlarıyla gezilip Boşluk ile işaretlenebilen listeden TDK, Dil Derneği, Kubbealtı, Vikisözlük, Nişanyan, Eş/Zıt Anlamlılar, TDK Bilim Sözlüğü ve TDK Derleme Sözlüğü arasından seçim yapılır. Varsayılan: TDK + Dil Derneği + Vikisözlük + Nişanyan + Kubbealtı. |
 | **Çoklu Arama 2 Kaynakları** *(Güncellendi)* | Çoklu Arama 2'nin (`"` tuşu) hangi sözlükleri sorgulayacağını belirler. Aynı kaynak listesinden seçim yapılır. Varsayılan: TDK + Dil Derneği + Kubbealtı. |
 
 ---
 
-## 💡 İpuçları
+## İpuçları
 
 * **Pencereyi kapatmak:** Sonuç pencereleri NVDA'nın sanal görüntüleme penceresinde açılır. `Esc` ile kapatılır.
 * **Alıntı kopyalama:** Sorgu sonrası katman komutunu açıp `C` tuşuna basın; biçimli alıntı panoya alınır ve Word ile LibreOffice'e yapıştırınca biçimlendirme korunur.
@@ -413,10 +461,10 @@ Tüm tuşları ve işlevlerini tek pencerede görmek için katman komutundan son
 
 ---
 
-## 💖 Teşekkür ve Katkıda Bulunanlar
+## Teşekkür ve Katkıda Bulunanlar
 
 Bu eklentinin satır satır işlenmesinde ve kodlanmasında emeği geçen şahsım **Çağrı Doğan** olarak; ortaya yalnızca bilgiye erişimi hızlandıran değil, aynı zamanda kullanırken keyif veren bir araç çıkmasından mutluluk duyuyorum.
 
 Bu projenin asıl kıvılcımı **Tuba Vural** sayesinde çakıldı. Fikrin NVDA_TR grubunda filizlenmesinden bugünkü haline gelmesine kadar; test süreçleri, geri bildirimler, kaynak önerileri ve içerik derleme konularındaki titiz çabası ve yol arkadaşlığı için kendisine en içten teşekkürlerimi sunuyorum.
 
-Kodlama sürecindeki desteği için yapay zeka asistanlarımız **Google Gemini** ve **Claude**'a; bilgi hazinelerinden faydalandığımız **TDK**, **Dil Derneği**, **Kubbealtı** ve **Tureng** gibi köklü kurumlara; eserlerini eklentimize dahil ederek değer kattığımız **Ülkü & Hüseyin Kuşçu**, **Ömer Asım Aksoy** ve **Vural Sözer** gibi kıymetli isimlere saygılarımızla...
+Kodlama sürecindeki desteği için yapay zeka asistanlarımız **Google Gemini** ve **Claude**'a; bilgi hazinelerinden faydalandığımız **TDK**, **Dil Derneği**, **Kubbealtı** ve **Tureng** gibi köklü kurumlara; eserlerini eklentimize dahil ederek değer kattığımız **Ülkü & Hüseyin Kuşçu**, **Ömer Asım Aksoy**, **Vural Sözer** ve **Hulki Aktunç** gibi kıymetli isimlere saygılarımızla...
