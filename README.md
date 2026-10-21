@@ -9,10 +9,9 @@
 * **Çoklu Arama ve Çoklu Arama 2: kaynaklarını ayarlardan özelleştirebileceğiniz iki yapılandırılabilir birleşik arama modu.** *(Güncellendi)*
 * **Çevrimdışı Eş/Zıt Anlamlı Sözlük — 42.000'den fazla kelime, internet bağlantısı gerekmez.** *(Yeni)*
 * **Çevrimdışı Kafiye Sözlüğü — 81.000'den fazla kelime; zengin, tam ve yarım kafiye gruplarıyla.** *(Yeni)*
-* TDK Bilim ve Sanat Terimleri Sözlüğü (70'ten fazla bilim dalı, çok dilli karşılıklar).
 * Çevrimdışı Müzik Terimleri Sözlüğü (4700+ madde, madde adı ve tanım içi arama).
 * **Çevrimdışı Argo Sözlüğü — Hulki Aktunç'un Büyük Argo Sözlüğü'nden 5.200'den fazla madde, internet bağlantısı gerekmez.** *(Yeni)*
-* **TDK Batı Kökenli Sözcükler Sözlüğü — batı kökenli sözcüklerin Türkçe açıklamaları ve örnek cümleler.** *(Yeni)*
+* **TDK Özel Sözlükler — Bilim ve Sanat Terimleri, Derleme, Batı Kökenli Sözcükler ve 7 kaynak daha; hepsi tek aramada birleşir, ayarlardan özelleştirilebilir.** *(Güncellendi)*
 * TDK Kişi Adları Sözlüğü (ada göre ve anlama göre arama).
 * Kelime listeleme (İle başlayan / İle biten) kaynak seçimiyle.
 * Anagram çözücü kaynak seçimiyle.
@@ -20,8 +19,7 @@
 * Akıllı Atasözü ve Deyim arama algoritması.
 * Dahili Deyimler ve Atasözleri sözlükleri (çevrimdışı çalışır).
 * Tureng (İngilizce-Türkçe / Türkçe-İngilizce) sözlük entegrasyonu.
-* TDK Derleme Sözlüğü (Türkiye Türkçesi Ağızları — yöresel kelimeler ve yörelerine göre anlamları).
-* İngilizceden İngilizceye sözlük, Metin Analizi, IP ve ISBN çözümleme.
+* İngilizceden İngilizceye sözlük, Metin Analizi, IP ve ISBN çözümleme; bulunan İngilizce kelimenin telaffuzunu çalma.
 * Vikisözlük ve Nişanyan Sözlük sonuçları NVDA penceresinde gösterilir; tarayıcı açılmaz.
 * Arama geçmişi (son 100 arama oturum boyunca bellekte tutulur).
 * Günün Kelimesi önbelleği (aynı gün içinde tekrar API çağrısı yapılmaz).
@@ -172,11 +170,24 @@ Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir
 
 ---
 
-### `B` — TDK Bilim ve Sanat Terimleri Sözlüğü *(doğrudan API, tarayıcı açılmaz)*
+### `O` — TDK Özel Sözlükler *(Güncellendi — birleşik arama)*
 
-**Ne işe yarar:** TDK'nın Bilim ve Sanat Terimleri Sözlüğü'nü sorgular. Matematik, Fizik, Tıp, Dil Bilimi, Müzik ve daha pek çok bilim dalına ait teknik terimleri Türkçe karşılıkları ve çok dilli eşdeğerleriyle (İngilizce, Fransızca, Almanca, Latince) birlikte sunar. Sonuçlar sözlük adı ve yayın yılına göre gruplandırılır.
+**Ne işe yarar:** TDK'nın `ozel.sozluk.gov.tr` üzerinde yayınladığı özel sözlüklerin tamamını **tek bir aramada** birleştirerek sorgular. Varsayılan olarak dahil olan kaynaklar:
 
-**Ne zaman kullanılır:** Akademik metin okurken ya da yazarken teknik bir terimin Türkçe karşılığını veya yabancı dil eşdeğerini bulmak istediğinizde.
+* Bilim ve Sanat Terimleri Sözlüğü (70'ten fazla bilim dalı, çok dilli karşılıklar: İngilizce, Fransızca, Almanca, Latince)
+* Derleme Sözlüğü (Türkiye Türkçesi Ağızları — yöresel kelimeler, il/ilçe ve kaynak künyesiyle)
+* Batı Kökenli Sözcükler Sözlüğü (Avrupa dillerinden Türkçeye geçmiş sözcükler, açıklama ve örnek cümlelerle)
+* Tarama Sözlüğü
+* Köken Bilgisi Sözlüğü (Deneme Sürümü)
+* Karşılaştırmalı Türk Lehçeleri Sözlüğü
+* TDK Lehçe Sözlükleri
+* TDK Tarihî Sözlükler
+* Yeni Derleme Sözlüğü (Deneme Sürümü)
+* Eren Türk Dilinin Etimolojik Sözlüğü
+
+**Ne zaman kullanılır:** Akademik bir metinde teknik bir terimin Türkçe karşılığını ararken, batı kökenli bir sözcüğün açıklamasına ihtiyaç duyduğunuzda, yöresel/ağız kelimelerini araştırırken ya da bir kelimenin köken ve tarihsel serüvenini geniş bir kaynak yelpazesinde taramak istediğinizde. Kaynaklardan biri sonuç döndürmezse yalnızca o kaynak atlanır; bulunan diğer sonuçlar yine gösterilir.
+
+**Kaynak seçimi:** Hangi sözlüklerin `O` aramasına dahil edileceği **ayarlar panelinden** özelleştirilebilir; varsayılan olarak yukarıdaki 10 kaynağın tamamı etkindir.
 
 ---
 
@@ -285,26 +296,6 @@ Bu kombinasyona bastığınızda "Sözlük Katmanı" etkinleşir. NVDA kısa bir
 
 ---
 
-### `X` — TDK Batı Kökenli Sözcükler *(Yeni)*
-
-**Ne işe yarar:** TDK'nın Batı Kökenli Sözcükler Sözlüğü'nü sorgular (`sozluk.gov.tr/bati`). Avrupa dillerinden Türkçeye geçmiş sözcükler için açıklamaları, sözcük türünü ve  örnek cümleler gösterir.
-
-**Ne zaman kullanılır:** Metinde karşılaştığınız batı  kökenli bir sözcüğün anlamını öğrenmek ve örnek cümleler istediğinizde. Öz Türkçe yazım hedeflerken veya çeviri yaparken pratik bir başvuru noktasıdır.
-
-**Örnek:** *Organizasyon* yazıp `X` ile arattığınızda örgütlenme* ya da *düzenleme* gibi Türkçe karşılıkları ve çeşitli eserlerden alıntılanan çok sayıda örnek cümle görürsünüz.
-
----
-
-### `D` — TDK Derleme Sözlüğü *(Türkiye Türkçesi Ağızları)*
-
-**Ne işe yarar:** TDK'nın Derleme Sözlüğü'nü sorgular. Standart Türkçede bulunmayan ya da farklı anlamlar kazanmış yöresel kelimeleri; anlamları, kullanıldıkları il ve ilçeler ile kaynak künyesiyle birlikte sunar.
-
-**Ne zaman kullanılır:** Yöresel bir kelimeyle karşılaştığınızda, bir kelimenin Anadolu'nun farklı bölgelerindeki kullanımını merak ettiğinizde ya da sözlü edebiyat ve folklor metinleri üzerine çalışırken.
-
-**Örnek:** *Kötek* yazıp `D` ile arattığınızda kelimenin hangi illerde hangi anlamlarda kullanıldığını ve hangi derleme kaynaklarında belgelendiğini görürsünüz.
-
----
-
 ### Kelime Avcısı (Liste Modu) *(Güncellendi)*
 
 Bulmaca çözerken, şiir yazarken ya da bir kalıba uyan kelimeleri ararken kullanabileceğiniz listeleme özelliği.
@@ -343,6 +334,16 @@ Katman komutundan sonra `.` (Nokta) tuşuna basın.
 * **Standart İngilizce kelime:** İngilizce-İngilizce tanımı getirir; bulunamazsa Tureng'e yönlenir.
 * **IP adresi (`192.168.1.1` formatı):** Konum, ISS ve ülke bilgisini sorgular.
 * **ISBN numarası (10 veya 13 hane):** Kitabın adını, yazarını ve yayıncısını getirir.
+
+---
+
+### `P` — Telaffuz Çal *(Yeni)*
+
+**Ne işe yarar:** Nokta (`.`) ile Akıllı Tanıma üzerinden bulunan son İngilizce kelimenin ses kaydını çalar.
+
+**Ne zaman kullanılır:** Bir İngilizce kelimenin doğru okunuşunu duymak istediğinizde. Önce `.` ile kelimeyi aratmanız gerekir; ardından katman içinde `P` tuşuna basarak telaffuzu dinleyebilirsiniz. Henüz bir arama yapılmamışsa veya kelime için ses kaydı yoksa NVDA bunu bildirir.
+
+**Not:** Bu komuta katman dışından da özel bir tuş atayabilirsiniz: *NVDA Menüsü → Tercihler → Girdi Hareketleri → TDK ve Sözlükler* yolundan "Son aranan İngilizce kelimenin telaffuzunu çalar" komutuna istediğiniz kısayolu tanımlayabilirsiniz; varsayılan olarak katman dışında bir tuşa atanmamıştır.
 
 ---
 
@@ -401,7 +402,6 @@ Tüm tuşları ve işlevlerini tek pencerede görmek için katman komutundan son
 | `5` | Kubbealtı Lugatı (API) |
 | `6` | Sadece TDK Güncel Türkçe Sözlük |
 | `7` | Sadece Dil Derneği |
-| `B` | TDK Bilim ve Sanat Terimleri |
 | `Q` | Google |
 | `W` | DuckDuckGo |
 | `E` | Bing |
@@ -415,14 +415,14 @@ Tüm tuşları ve işlevlerini tek pencerede görmek için katman komutundan son
 | `K` | Argo Sözlüğü (tanım içi arama) |
 | `Z` | Eş/Zıt Anlamlı Sözlük (çevrimdışı) |
 | `Y` | Kafiye Sözlüğü (çevrimdışı) |
-| `X` | TDK Batı Kökenli Sözcüklere Türkçe Karşılıklar |
-| `D` | TDK Derleme Sözlüğü (Türkiye Türkçesi Ağızları) |
+| `O` | TDK Özel Sözlükler (Bilim-Sanat, Derleme, Batı Kökenli ve 7 kaynak daha — ayarlardan seçili olanlar) |
 | `I` | Tureng (İngilizce ↔ Türkçe) |
 | `Ö` | TDK Kişi Adları Sözlüğü (ada göre) |
 | `Ç` | TDK Kişi Adları Sözlüğü (anlama göre) |
 | `*` | İle Başlayan Kelimeler (kaynak seçimli) |
 | `-` | İle Biten Kelimeler (kaynak seçimli) |
 | `0` | Anagram Çözücü (kaynak seçimli) |
+| `P` | Son Aranan İngilizce Kelimenin Telaffuzunu Çal |
 | `C` | Son Sonucu Alıntı Olarak Kopyala |
 | `G` | Günün Kelimesi (TDK) |
 | `H` | Arama Geçmişi |
@@ -449,6 +449,7 @@ Tüm tuşları ve işlevlerini tek pencerede görmek için katman komutundan son
 | **Kafiye Sözlüğünde Yarım Kafiye Gösterimi** *(Yeni)* | Yarım kafiye sonuçlarının (1 ortak harf) gösterilip gösterilmeyeceğini belirler: Gösterme (varsayılan), Sınırlı Göster (İlk 100) veya Hepsini Göster. |
 | **Çoklu Arama Kaynakları** *(Güncellendi)* | Çoklu Arama'nın (`F` tuşu) hangi sözlükleri sorgulayacağını belirler. Ok tuşlarıyla gezilip Boşluk ile işaretlenebilen listeden TDK, Dil Derneği, Kubbealtı, Vikisözlük, Nişanyan, Eş/Zıt Anlamlılar, TDK Bilim Sözlüğü ve TDK Derleme Sözlüğü arasından seçim yapılır. Varsayılan: TDK + Dil Derneği + Vikisözlük + Nişanyan + Kubbealtı. |
 | **Çoklu Arama 2 Kaynakları** *(Güncellendi)* | Çoklu Arama 2'nin (`"` tuşu) hangi sözlükleri sorgulayacağını belirler. Aynı kaynak listesinden seçim yapılır. Varsayılan: TDK + Dil Derneği + Kubbealtı. |
+| **TDK Özel Sözlükleri** *(Yeni)* | `O` tuşunun hangi TDK özel sözlüklerini tek aramada birleştireceğini belirler. Bilim ve Sanat, Derleme, Batı Kökenli, Tarama, Köken Bilgisi, Karşılaştırmalı Türk Lehçeleri, TDK Lehçe Sözlükleri, TDK Tarihî Sözlükler, Yeni Derleme ve Eren Etimoloji arasından seçim yapılır. Varsayılan: hepsi etkin. |
 
 ---
 
